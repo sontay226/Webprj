@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "rUXJpPuS23tGN5K9q3ueiDbaKJqdBcX6o8phE1b+nGc4kQ5TxQfwAM07izd88u9fuHuiChhqNp4t6JJDVsgeGg==",
+  "success": true,
+  "projectFilePath": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

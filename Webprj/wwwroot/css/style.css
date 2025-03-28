@@ -1,0 +1,445 @@
+﻿
+/* idx page */
+.chaomung {
+    box-sizing: border-box; /* Bao gồm padding và border trong kích thước của phần tử */
+    font-size: 3vw;
+    text-align: center;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: borderBlink 5s infinite;
+    border: 3px solid transparent; /* Viền với độ rộng 3px */
+    width: auto;
+    margin: 5px auto;
+    white-space: nowrap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em; /* Tăng kích thước chữ */
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* napthe */
+.napthe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    margin: 0;
+    height: auto;
+}
+
+    .napthe .form-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2);
+        width: 280px;
+        text-align: center;
+    }
+
+    .napthe form div {
+        margin-bottom: 10px;
+    }
+
+    .napthe label {
+        display: block;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .napthe input {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+        .napthe input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+.napthe-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.index-page input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 3vw;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 5px;
+}
+
+.index-page button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1vw;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 5px;
+}
+
+@keyframes borderBlink {
+    0% {
+        border-color: red;
+    }
+
+    14% {
+        border-color: orange;
+    }
+
+    28% {
+        border-color: yellow;
+    }
+
+    42% {
+        border-color: green;
+    }
+
+    57% {
+        border-color: blue;
+    }
+
+    71% {
+        border-color: indigo;
+    }
+
+    85% {
+        border-color: violet;
+    }
+
+    100% {
+        border-color: red;
+    }
+}
+
+.reload-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 0.1vw; /* Đơn vị vw giúp font thay đổi theo chiều rộng cửa sổ */
+    padding: 0.1rem 0.1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .reload-button:hover {
+        background-color: #0056b3;
+    }
+
+.blinking-color-text {
+    font-size: 3vw;
+    font-weight: bold;
+    animation: blinkColor 2s infinite; /* Thời gian chu kỳ 2s */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Thêm bóng cho chữ */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.OptionAcc {
+    background-color: #FF6666;
+    border: 2px solid orange;
+    border-radius: 10px;
+    width: 23.5%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 5px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+#nextpage {
+    background-color: red;
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    padding: auto;
+    font-size: 10px;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.OptionRandom {
+    background-color: #FF6666;
+    border: 2px solid orange;
+    border-radius: 10px;
+    width: 23.5%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 5px;
+}
+
+.card-content h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.dangkytaikhoan {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dangnhaptaikhoan {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logsign-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    margin: 0;
+}
+
+    .logsign-page form div {
+        margin-bottom: 10px;
+    }
+
+    .logsign-page label {
+        display: block;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .logsign-page input {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dangnhaptaikhoan {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logsign-page .form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2);
+    width: 280px;
+    text-align: center;
+}
+
+
+.products body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #b3daf0;
+    color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* qtrung css */
+/* Container chính của form customer*/
+.form-container {
+    background-color: #4465da;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(85, 98, 105, 0.5);
+    width: 50%;
+    position: relative; /* Để căn dấu "X" vào bên trong form */
+    margin: 0 auto;
+}
+
+/* Tiêu đề chính của form */
+.title-head {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Các phần nhóm form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    /* Label của các input */
+    .form-group label {
+        display: block;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+/* Các input fields */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+/* Nút Gửi */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Nút Quay lại */
+.back-btn {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+}
+
+    .back-btn:hover {
+        background-color: #ddd;
+    }
+
+/* Các link trong form */
+a {
+    text-decoration: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .form-actions button {
+        padding: 8px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.reset-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+.close-btn {
+    background-color: #555;
+    color: white;
+}

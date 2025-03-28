@@ -1,0 +1,35 @@
+﻿<html lang="en">
+<head>
+    <title>Trang Chủ</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sơn Tây">
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body class="index-page">
+    <header>
+        <div class="container">
+            <h1 class="chaomung">Shop Bán Thiết Bị Y Tế</h1>
+        </div>
+
+        <form>
+            <button type="submit" class="reload-button">ShopSonTay.Com.Vn</button>
+        </form>
+        <button onclick="window.open('dangky.html','_blank')" style="position: fixed; top : 10px ; right: 10px;">
+            Đăng Ký
+        </button>
+        <br>
+        <button onclick="window.open('dangnhap.html','_blank')" style="position: fixed ; top : 30px ; right : 10px;">
+            Đăng Nhập
+        </button>
+    </header>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        
+    </footer>
+</body>
+</html>

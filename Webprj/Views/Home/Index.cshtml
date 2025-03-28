@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+    <body class="index-page">
+        <button onclick="window.open('https://www.facebook.com/sontaypham226')" style="position : fixed; bottom: 10px; right: 10px;">
+            Contact
+        </button>       
+        <form> 
+            <button type="submit" class="reload-button">ShopSonTay.Com.Vn</button>
+        </form>
+        <button onclick="window.open('signup.cshtml','_blank')" style="position: fixed; top : 10px ; right: 10px;">
+            Đăng Ký
+        </button>
+        <br>
+        <button onclick="window.open('signin.cshtml','_blank')" style="position: fixed ; top : 30px ; right : 10px;">
+            Đăng Nhập 
+        </button>
+        <div class="napthe">
+            <h1>Nạp Thẻ</h1>
+            <form class="form-container">
+                <div>
+                    <label style="font-size: 1vw;display: inline-block; width: auto;" for="nhamang">Chọn Nhà Mạng </label>
+                    <select id ="nhamang">
+                        <option value="Viettel">
+                            Viettel
+                        </option>
+                        <option value="Vinaphone"> 
+                            Vinaphone
+                        </option>
+                        <option value="Mobiphone">
+                            Mobiphone
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size: 1vw; display: inline-block; width: auto;" for="menhgia">Chọn Mệnh Giá</label>
+                    <select id ="menhgia">
+                        <option value="20.000">20.000</option>
+                        <option value="50.000"> 50.000</option>
+                        <option value="100.000"> 100.000</option>
+                        <option value="200.000" > 200.000</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="masothe" style="display: inline-block;font-size: 1vw;"> Mã Số Thẻ </label>
+                    <input type = "text" id ="masothe" name="masothe" style="display: inline-block;"> <br>
+                </div>
+                <div>
+                    <lable for="maserial" style="display: inline-block;font-size: 1vw"> Mã Serial </lable>
+                    <input type="text" id = "maserial" name ="maserial" style="display: inline-block;" > <br>
+                </div>
+                <input type="submit" value="Xác Nhận" style="background-color: #007bff; color: white;font-size:  1vw;border: 2px solid #FFD700;border-radius: 5px ;">
+            </form>
+        </div>
+        <!-- Nút chuyển sang trang nhập đơn hàng -->
+        <div class="add-group">
+                <button class="action-btn add-order" , onclick="window.open('orders.html', '_blank')">Thêm Đơn Hàng</button>
+                <button class="action-btn add-customer" , onclick="window.open('customers.html', '_blank')">Thêm Khách Hàng</button>
+                <button class="action-btn add-shipment" , onclick="window.open('shipments.html', '_blank')">Thêm Đơn Giao</button>
+                <button class="action-btn add-shipment" , onclick="window.open('products.html', '_blank')">Thêm Sản Phẩm</button>
+        </div>
+
+         <!--lua chon loai Acc-->
+        <div>
+          <p class="blinking-color-text">Danh Sách Thiết Bị Y Tế</p>
+
+            <style>
+                @@keyframes blinkColor {
+                    0% { color: #FF6347; opacity: 1; }  /* Tomato */
+                    10% { color: #FF4500; opacity: 0.8; }  /* OrangeRed */
+                    20% { color: #FFD700; opacity: 1; }  /* Gold */
+                    30% { color: #32CD32; opacity: 0.7; }  /* LimeGreen */
+                    40% { color: #1E90FF; opacity: 1; }  /* DodgerBlue */
+                    50% { color: #8A2BE2; opacity: 0.6; }  /* BlueViolet */
+                    60% { color: #FF1493; opacity: 1; }  /* DeepPink */
+                    70% { color: #FF69B4; opacity: 0.8; }  /* HotPink */
+                    80% { color: #00FF7F; opacity: 1; }  /* SpringGreen */
+                    90% { color: #00CED1; opacity: 0.7; }  /* DarkTurquoise */
+                    100% { color: #FF6347; opacity: 1; }  /* Tomato */
+                }
+            </style>
+
+        </div>
+        <!-- danh sách acc lol tự chọn --> 
+         
+         <div class="container" >
+            <div class="OptionAcc">
+                <img src="images/acctuchon.png" alt="LMHT Tự Chọn">
+                <div class="card-content">
+                    <h3>LMHT Tự Chọn</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+            <div class="OptionAcc">
+                <img src="images/accnuocngoai.png" alt="LMHT Nước Ngoài">
+                <div class="card-content">
+                    <h3>LMHT Nước Ngoài</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                        <div class="OptionAcc">
+                <img src="images/accnhieutuong.png" alt="LMHT Nhiều TƯớng">
+                <div class="card-content">
+                    <h3>LMHT Nhiều Tướng</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                 <div class="OptionAcc">
+                <img src="images/acczinthongthao.png" alt="LMHT Zin Thông Thạo">
+                <div class="card-content">
+                    <h3>LMHT Zin Thông Thạo</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                <div class="OptionAcc">
+                <img src="images/dtclsieungon.png" alt="TFT Siu Ngon">
+                <div class="card-content">
+                    <h3>TFT Siu Ngon</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                <div class="OptionAcc">
+                <img src="images/dtclnuocngoai.png" alt="TFT Nước Ngoài">
+                <div class="card-content">
+                    <h3>TFT Nước Ngoài</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                <div class="OptionAcc">
+                <img src="images/pettimdtcl.png" alt="TFT Pet Tím">
+                <div class="card-content">
+                    <h3>TFT Pet Tím</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+                <div class="OptionAcc">
+                <img src="images/santimdtcl.png" alt="TFT Sân Tím">
+                <div class="card-content">
+                    <h3>TFT Sân Tím</h3>
+                    <p>Số Tài Khoản : ???</p>
+                    <p>Đã Bán : ???</p>
+                    <button>Xem Tất Cả</button>
+                </div>
+            </div>
+         </div>
+         <!-- next page -->
+          <div class="index-page">
+            <button id="nextpage" onclick="window.open('page2.html','_blank')">
+            Next Page 
+            </button>         
+        </div>
+    </body>
+</html>
