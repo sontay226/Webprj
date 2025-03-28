@@ -7,28 +7,23 @@
     <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body class="index-page">
-    <header>
-        <div class="container">
+    <header class="header-container">
+        <div class="">
             <h1 class="chaomung">Shop Bán Thiết Bị Y Tế</h1>
         </div>
-        <form>
-            <button type="submit" class="reload-button">ShopSonTay.Com.Vn</button>
-        </form>
-        <button class="btn-static fixed-top-right" onclick="window.open('dangky.html','_blank')">
-            Đăng Ký
-        </button>
-        <br>
-        <button class="btn-static fixed-top-right-second" onclick="window.open('dangnhap.html','_blank')">
-            Đăng Nhập
-        </button>
-        <br>
-        <button class="btn-static fixed-bottom-right" onclick="window.open('contact.html','_blank')">
-            Contact
-        </button>
-        <br>
-        <button class="btn-static fixed-bottom-center" onclick="window.open('page2.html','_blank')">
-            Next Page
-        </button>
+        
+        <div>
+            <button class="btn-static " onclick="window.open('contact.html','_blank')">
+                Contact
+            </button>
+            <button class="btn-static " onclick="window.open('dangky.html','_blank')">
+                Đăng Ký
+            </button>
+            <button class="btn-static" onclick="window.open('dangnhap.html','_blank')">
+                Đăng Nhập
+            </button>
+        </div>
+
     </header>
 
     @RenderBody()
@@ -36,6 +31,9 @@
 
     <footer class="border-top footer text-muted">
         <!-- Footer content -->
+        <button class="btn-static fixed-bottom-center" onclick="window.open('page2.html','_blank')">
+            Next Page
+        </button>
     </footer>
 </body>
 </html>

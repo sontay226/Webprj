@@ -11,24 +11,15 @@
     text-decoration: none;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .fixed-bottom-center {
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.fixed-bottom-right {
-    bottom: 10px;
-    right: 10px;
-}
-
-.fixed-top-right {
-    top: 10px;
-    right: 10px;
-}
-.fixed-top-right-second {
-    top: 30px;
-    right: 10px;
+    left : auto;
 }
 
 .contact-container {
@@ -69,16 +60,74 @@ h1 {
     color: #2c3e50;
     font-weight: bold;
 }
+.napthe-form-container {
+    flex :1;
+}
+/* Thanh ngang cơ bản */
+.menu-bar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Canh nút Menu giữa chiều dọc */
+    flex-direction : column;
+    width : auto;
+}
+
+/* Nút "Menu" */
+.menu-btn {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-right: 20px; /* Tạo khoảng cách với danh sách */
+}
+
+/* Danh sách danh mục */
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Mặc định ẩn */
+}
+
+    /* Khi hiển thị, thêm class .show để display: block */
+    .menu-list.show {
+        display: block;
+        /* Nếu muốn hiển thị dạng khối dọc, có thể thêm style cho li */
+    }
+
+    /* Style cho từng mục trong danh sách */
+    .menu-list li {
+        margin: 5px 0; /* Mỗi danh mục cách nhau 5px */
+    }
+
+        /* Style cho link */
+        .menu-list li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+            .menu-list li a:hover {
+                background-color: #ddd;
+            }
+
 
 /* napthe */
 .napthe {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: #f4f4f4;
-    flex-direction: column;
-    margin: 0;
+    flex-direction: row;
+    margin: 0 auto;
     height: auto;
+    gap : 20px;
 }
 
     .napthe .form-container {
