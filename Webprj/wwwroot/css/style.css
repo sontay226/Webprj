@@ -1,7 +1,51 @@
 ﻿
+.btn-static {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1vw;
+    cursor: pointer;
+    padding: 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fixed-bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fixed-bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.fixed-top-right {
+    top: 10px;
+    right: 10px;
+}
+.fixed-top-right-second {
+    top: 30px;
+    right: 10px;
+}
+
+.contact-container {
+    position: relative;
+    width: 100%;
+}
+
+    .contact-container .btn-static {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+
 /* idx page */
 .chaomung {
-    box-sizing: border-box; /* Bao gồm padding và border trong kích thước của phần tử */
+    box-sizing: border-box; 
     font-size: 3vw;
     text-align: center;
     color: red;
@@ -9,7 +53,7 @@
     font-weight: bold;
     border-radius: 5px;
     animation: borderBlink 5s infinite;
-    border: 3px solid transparent; /* Viền với độ rộng 3px */
+    border: 3px solid transparent;
     width: auto;
     margin: 5px auto;
     white-space: nowrap;
@@ -21,7 +65,7 @@
 
 h1 {
     text-align: center;
-    font-size: 2em; /* Tăng kích thước chữ */
+    font-size: 2em;
     color: #2c3e50;
     font-weight: bold;
 }
@@ -41,7 +85,7 @@ h1 {
         background: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         width: 280px;
         text-align: center;
     }
@@ -140,11 +184,11 @@ h1 {
     }
 }
 
+/* reload-button */
 .reload-button {
-    position: fixed;
     top: 10px;
     left: 10px;
-    font-size: 0.1vw; /* Đơn vị vw giúp font thay đổi theo chiều rộng cửa sổ */
+    font-size: 0.1vw;
     padding: 0.1rem 0.1rem;
     background-color: #007bff;
     color: white;
@@ -160,13 +204,11 @@ h1 {
 .blinking-color-text {
     font-size: 3vw;
     font-weight: bold;
-    animation: blinkColor 2s infinite; /* Thời gian chu kỳ 2s */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Thêm bóng cho chữ */
+    animation: blinkColor 2s infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-
-
 
 .container {
     display: flex;
@@ -193,14 +235,7 @@ h1 {
 }
 
 #nextpage {
-    background-color: red;
-    color: white;
-    border: 2px solid #ffd700;
-    border-radius: 5px;
-    padding: auto;
-    font-size: 10px;
-    cursor: pointer;
-    font-size: 1vw;
+    padding: 0.3vw 0.7vw;
 }
 
 .footer {
@@ -234,7 +269,7 @@ h1 {
     color: #2c3e50;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -246,7 +281,7 @@ h1 {
     color: #2c3e50;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -289,27 +324,14 @@ input[type="submit"] {
     border-radius: 5px;
 }
 
-.dangnhaptaikhoan {
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: #2c3e50;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba( 0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 .logsign-page .form-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 280px;
     text-align: center;
 }
-
 
 .products body {
     font-family: 'Times New Roman', Times, serif;
@@ -322,19 +344,18 @@ input[type="submit"] {
     margin: 0;
 }
 
-/* qtrung css */
-/* Container chính của form customer*/
+/* qtrung css - Container của form customer */
 .form-container {
     background-color: #4465da;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(85, 98, 105, 0.5);
     width: 50%;
-    position: relative; /* Để căn dấu "X" vào bên trong form */
+    position: relative;
     margin: 0 auto;
 }
 
-/* Tiêu đề chính của form */
+/* Tiêu đề của form */
 .title-head {
     text-align: center;
     color: black;
@@ -342,12 +363,11 @@ input[type="submit"] {
     margin-bottom: 20px;
 }
 
-/* Các phần nhóm form */
+/* Nhóm form */
 .form-group {
     margin-bottom: 20px;
 }
 
-    /* Label của các input */
     .form-group label {
         display: block;
         color: white;
@@ -355,7 +375,6 @@ input[type="submit"] {
         margin-bottom: 5px;
     }
 
-/* Các input fields */
 .input-field {
     width: 100%;
     padding: 12px;
@@ -372,7 +391,6 @@ input[type="submit"] {
         outline: none;
     }
 
-/* Nút Gửi */
 .submit-btn {
     width: 100%;
     padding: 14px;
@@ -389,7 +407,6 @@ input[type="submit"] {
         background-color: #0056b3;
     }
 
-/* Nút Quay lại */
 .back-btn {
     padding: 10px 20px;
     background-color: #f1f1f1;
@@ -408,7 +425,6 @@ input[type="submit"] {
         background-color: #ddd;
     }
 
-/* Các link trong form */
 a {
     text-decoration: none;
 }
@@ -443,3 +459,4 @@ a {
     background-color: #555;
     color: white;
 }
+

@@ -1,35 +1,42 @@
-﻿<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Trang Chủ</title>
     <meta charset="utf-8">
     <meta name="author" content="Sơn Tây">
-    <link rel="stylesheet" href="~/css/style.css"/>
+    <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body class="index-page">
     <header>
         <div class="container">
             <h1 class="chaomung">Shop Bán Thiết Bị Y Tế</h1>
         </div>
-
         <form>
             <button type="submit" class="reload-button">ShopSonTay.Com.Vn</button>
         </form>
-        <button onclick="window.open('dangky.html','_blank')" style="position: fixed; top : 10px ; right: 10px;">
+        <!-- Nút Đăng Ký ở góc trên bên phải -->
+        <button class="btn-static fixed-top-right" onclick="window.open('dangky.html','_blank')">
             Đăng Ký
         </button>
-        <br>
-        <button onclick="window.open('dangnhap.html','_blank')" style="position: fixed ; top : 30px ; right : 10px;">
+        <!-- Nút Đăng Nhập ngay dưới nút Đăng Ký -->
+        <button class="btn-static fixed-top-right-second" onclick="window.open('dangnhap.html','_blank')">
             Đăng Nhập
         </button>
+        <!-- Nút Contact ở góc dưới bên phải -->
+        <button class="btn-static fixed-bottom-right" onclick="window.open('contact.html','_blank')">
+            Contact
+        </button>
+        <!-- Nút Next Page ở giữa dưới cùng -->
+        <button class="btn-static fixed-bottom-center" onclick="window.open('page2.html','_blank')">
+            Next Page
+        </button>
     </header>
-    <div class="">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+
+    @RenderBody ()
+
 
     <footer class="border-top footer text-muted">
-        
+        <!-- Footer content -->
     </footer>
 </body>
 </html>
