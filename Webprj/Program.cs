@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Webprj.Models;
+
 namespace Webprj
 {
     public class Program
@@ -5,6 +8,9 @@ namespace Webprj
         public static void Main ( string[] args )
         {
             var builder = WebApplication.CreateBuilder (args);
+            builder.Services.AddDbContext<Test2WebContext> (options =>
+            options.UseSqlServer (builder.Configuration.GetConnectionString ("DefaultConnection")));
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews ();
