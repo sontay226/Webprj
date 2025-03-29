@@ -1,0 +1,80 @@
+﻿@model Webprj.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông Tin Sản Phẩm</title>
+    <style>
+        .detail-row {
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Thông Tin Sản Phẩm : @Model.Name</h3>
+    <div>
+        <h4>Chi Tiết Sản Phẩm</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Tên Sản Phẩm:</span>
+            <span>@Html.DisplayFor(model => model.Name)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Mô Tả:</span>
+            <span>@Html.DisplayFor(model => model.Description)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Giá:</span>
+            <span>@Html.DisplayFor(model => model.Price)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Hàng Tồn:</span>
+            <span>@Html.DisplayFor(model => model.StockQuantity)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Link Ảnh:</span>
+            <span>@Html.DisplayFor(model => model.ImageUrl)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Chứng Nhận:</span>
+            <span>@Html.DisplayFor(model => model.Certificate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Tính Năng Đặc Biệt:</span>
+            <span>@Html.DisplayFor(model => model.TechnicalSpecifications)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Tạo:</span>
+            <span>@Html.DisplayFor(model => model.CreatedAt)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Cập Nhật:</span>
+            <span>@Html.DisplayFor(model => model.UpdatedAt)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Danh Mục:</span>
+            <span>@Html.DisplayFor(model => model.Category.CategoryId)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Nhà Cung Cấp:</span>
+            <span>@Html.DisplayFor(model => model.Supplier.SupplierId)</span>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="ProductView">Trở Lại Danh Sách Sản Phẩm</a>
+    </div>
+</body>
+</html>
