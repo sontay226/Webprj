@@ -70,7 +70,7 @@
                 @Html.DisplayFor(modelItem => item.Supplier.SupplierId)
             </td>
             <td>
-                <a asp-action="DeleteProduct" asp-route-id="@item.ProductId">Xóa</a> |
+                <a asp-action="DeleteProduct" asp-route-ProductId="@item.ProductId">Xóa</a> |
                 <a asp-action="Edit" asp-route-id="@item.ProductId">Sửa</a> |
                 <a asp-action="Details" asp-route-id="@item.ProductId">Thông Tin</a>
             </td>

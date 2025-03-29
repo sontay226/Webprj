@@ -13,12 +13,14 @@ namespace Webprj.Controllers
             return View (data);
         }
         [HttpGet]
-        public IActionResult DeleteProduct ( int ProductId)
+        public IActionResult DeleteProduct ( int ProductId )
         {
             var data = _context.Products.Find (ProductId);
-            if ( data != null) return View (data);
-            return NotFound();
+            if (data != null)
+                return View (data);
+            return NotFound ();
         }
+
         [HttpPost]
         public IActionResult ConfirmDeleteProduct( int ProductId) 
         {
