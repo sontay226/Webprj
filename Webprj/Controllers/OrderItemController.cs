@@ -63,7 +63,7 @@ namespace Webprj.Controllers
                 data.ProductNumber = orderItem.ProductNumber;
                 data.TotalCost = orderItem.TotalCost;
                 _context.SaveChanges();
-                return RedirectToAction("OrderItemsView");
+                return RedirectToAction("OrderItemView");
             }
             return NotFound();
         }
