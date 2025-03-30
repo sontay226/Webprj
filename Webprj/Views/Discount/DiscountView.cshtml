@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Webprj.Models.Discount>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DiscountView</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Thêm</a>
+    <a asp-action="Find">Tìm Kiếm</a>
+</p>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Mã Giảm Giá</th>
+            <th>
+                Mã Áp Dụng
+            </th>
+            <th>
+                Số Tiền Giảm 
+            </th>
+            <th>
+                Ngày Bắt Đầu
+            </th>
+            <th>
+                Ngày Kết Thúc
+            </th>
+            <th>
+                Loại Giảm Giá
+            </th>
+            <th>Tùy Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.DiscountId)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountType)
+            </td>
+            <td>
+                <a asp-action="DeleteDiscount" asp-route-DiscountId="@item.DiscountId">Xóa</a> |
+                <a asp-action="EditDiscount" asp-route-DiscountId="@item.DiscountId">Sửa</a> |
+                <a asp-action="DetailDiscount" asp-route-DiscountId="@item.DiscountId">Thông Tin</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

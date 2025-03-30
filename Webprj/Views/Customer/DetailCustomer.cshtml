@@ -5,64 +5,61 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Thông Tin Chi Tiết</title>
+    <title>Thông Tin Khách Hàng</title>
+    <style>
+        .detail-row {
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-<div>
-    <h4>Khách Hàng : @Model.CustomerName</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CustomerName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CustomerName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShippingAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShippingAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BillingAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BillingAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="CustomerView">Trở Lại Danh Sách Khách Hàng</a>
-</div>
+    <h3>Thông Tin Chi Tiết: @Model.CustomerName</h3>
+    <div>
+        <hr/>
+        <div class="detail-row">
+            <span class="detail-label">Tên Khách Hàng:</span>
+            <span>@Html.DisplayFor(model => model.CustomerName)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Email:</span>
+            <span>@Html.DisplayFor(model => model.Email)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Số Điện Thoại:</span>
+            <span>@Html.DisplayFor(model => model.PhoneNumber)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Địa Chỉ Giao Hàng:</span>
+            <span>@Html.DisplayFor(model => model.ShippingAddress)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Địa Chỉ Thanh Toán:</span>
+            <span>@Html.DisplayFor(model => model.BillingAddress)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Mật Khẩu:</span>
+            <span>@Html.DisplayFor(model => model.PasswordHash)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Tạo:</span>
+            <span>@Html.DisplayFor(model => model.CreatedAt)</span>
+        </div>
+        <hr/>
+    </div>
+
+    <div>
+        <a asp-action="CustomerView" class="btn btn-secondary">Trở Lại Danh Sách Khách Hàng</a>
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,41 @@
+﻿@model Webprj.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông Tin Danh Mục</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/CategoryView.css" />
+</head>
+<body>
+
+<div>
+    <h4>Danh Mục : @Model.CategoryName</h4>
+        <div>
+            <h4>Chi Tiết Danh Mục</h4>
+            <hr />
+            <div class="detail-row">
+                <span class="detail-label">Mã Danh Mục:</span>
+                <span>@Html.DisplayFor(model => model.CategoryId)</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Tên Danh Mục:</span>
+                <span>@Html.DisplayFor(model => model.CategoryName)</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Mô Tả:</span>
+                <span>@Html.DisplayFor(model => model.Description)</span>
+            </div>
+            <hr />
+        </div>
+</div>
+<div>
+    <a asp-action="CategoryView">Trở Lại Danh Sách Danh Mục</a>
+</div>
+</body>
+</html>

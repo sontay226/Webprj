@@ -1,0 +1,60 @@
+﻿@model Webprj.Models.Discount
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Xóa Giảm Giá</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/DiscountView.css" />
+    <style>
+        .detail-row {
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Bạn có chắc chắn muốn xóa Giảm Giá: @Model.DiscountCode không?</h3>
+    <div>
+        <h4>Thông Tin Chi Tiết</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Mã Giảm Giá:</span>
+            <span>@Html.DisplayFor(model => model.DiscountCode)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Số Tiền Giảm:</span>
+            <span>@Html.DisplayFor(model => model.DiscountAmount)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Bắt Đầu:</span>
+            <span>@Html.DisplayFor(model => model.StartDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Kết Thúc:</span>
+            <span>@Html.DisplayFor(model => model.EndDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Loại Giảm Giá:</span>
+            <span>@Html.DisplayFor(model => model.DiscountType)</span>
+        </div>
+    </div>
+
+    <form asp-action="ConfirmDeleteDiscount" method="post">
+        <input type="hidden" asp-for="DiscountId" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="DiscountView" class="btn btn-secondary">Trở Lại Danh Sách Giảm Giá</a>
+    </form>
+
+</body>
+</html>

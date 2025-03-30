@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Webprj.Models.Category>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CategoryView</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/CategoryView.css" />
+</head>
+<body>
+<p>
+    <a asp-action="Create">Thêm</a>
+    <a asp-action="Find">Tìm Kiếm</a>
+</p>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Mã Danh Mục</th>
+            <th>
+                Tên Danh Mục
+            </th>
+            <th>
+                Mô Tả
+            </th>
+            <th>Tùy Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.CategoryId)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-action="DeleteCategory" asp-route-CategoryId="@item.CategoryId">Xóa</a> |
+                <a asp-action="EditCategory" asp-route-CategoryId="@item.CategoryId">Sủa</a> |
+                <a asp-action="DetailCategory" asp-route-CategoryId="@item.CategoryId">Thông Tin</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

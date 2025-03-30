@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ph8dEuE5u6ewLAcjT0hfTfSPeGGJDPsDkkgGN4mTYS4=",
+  "Hash": "IHnunldhCorR2SDs6NXMBB+Vl6RNGk7LwTtpxfw/obg=",
   "Source": "Webprj",
   "BasePath": "_content/Webprj",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\CategoryView.css",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "css/views/CategoryView.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\views\\CategoryView.css"
+    },
+    {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\CustomerView.css",
       "SourceId": "Webprj",
       "SourceType": "Discovered",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\views\\CustomerView.css"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\DiscountView.css",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "css/views/DiscountView.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\views\\DiscountView.css"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ProductView.css",

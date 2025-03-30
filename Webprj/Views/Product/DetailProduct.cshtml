@@ -23,9 +23,8 @@
 </head>
 <body>
 
-    <h3>Thông Tin Sản Phẩm : @Model.Name</h3>
+    <h3>Thông Tin Chi Tiết: @Model.Name</h3>
     <div>
-        <h4>Chi Tiết Sản Phẩm</h4>
         <hr />
         <div class="detail-row">
             <span class="detail-label">Tên Sản Phẩm:</span>
@@ -71,6 +70,7 @@
             <span class="detail-label">Nhà Cung Cấp:</span>
             <span>@Html.DisplayFor(model => model.Supplier.SupplierId)</span>
         </div>
+        <hr />
     </div>
 
     <div>

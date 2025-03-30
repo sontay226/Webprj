@@ -1,0 +1,43 @@
+﻿@model Webprj.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Xóa Danh Mục</title>
+    <link rel="stylesheet" type="text/css" href="~/css/view/CategoryView.css" />
+</head>
+<body>
+
+<h3>Bạn Có Chắc Chắn Muốn Xóa Danh Mục Này</h3>
+<div>
+    <h4>Thông Tin Chi Tiết</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    
+    <form asp-action="ConfirmDeleteCategory" method="post">
+        <input type="hidden" asp-for="CategoryId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="CategoryView">Trở Lại Danh Sách Danh Mục</a>
+    </form>
+</div>
+</body>
+</html>

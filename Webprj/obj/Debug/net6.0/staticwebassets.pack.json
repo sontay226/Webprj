@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\CategoryView.css",
+      "PackagePath": "staticwebassets\\css\\views\\CategoryView.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\CustomerView.css",
       "PackagePath": "staticwebassets\\css\\views\\CustomerView.css"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\DiscountView.css",
+      "PackagePath": "staticwebassets\\css\\views\\DiscountView.css"
     },
     {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ProductView.css",
