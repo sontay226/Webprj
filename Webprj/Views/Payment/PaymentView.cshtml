@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Webprj.Models.Payment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông Tin Giao Dịch</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/PaymentView.css" />
+</head>
+<body>
+<p>
+    <a asp-action="Create">Thêm</a>
+    <a asp-action="Find">Tìm Kiếm</a>
+</p>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Mã Giao Dịch</th>
+            <th>Mã Đơn Hàng</th>
+            <th>Thời Gian Giao Dịch</th>
+            <th> Phương Thức Thanh Toán</th>
+            <th>Tùy Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.PaymentId)</td>
+            <td>@Html.DisplayFor(modelItem => item.OrderId)</td>
+            <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.PayMethod)</td>
+            <td>
+                <a asp-action="DeletePayment" asp-route-PaymentId="@item.PaymentId">Xóa</a> |
+                <a asp-action="EditPayment" asp-route-PaymentId="@item.PaymentId">Sửa</a> |
+                <a asp-action="DetailPayment" asp-route-PaymentId="@item.PaymentId">Thông Tin</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

@@ -12,13 +12,18 @@
     <link rel="stylesheet" type="text/css" href="~/css/views/OrderView.css" />
     <style>
         .detail-row {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
 
         .detail-label {
-            display: inline-block;
             width: 150px;
             font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
         }
     </style>
 </head>
@@ -29,23 +34,23 @@
         <hr />
         <div class="detail-row">
             <span class="detail-label">Mã Sản Phẩm Đặt:</span>
-            <span>@Html.DisplayFor(model => model.OrderItemId)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.OrderItemId)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Mã Đơn Đặt Hàng:</span>
-            <span>@Html.DisplayFor(model => model.OrderId)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.OrderId)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Mã Sản Phẩm:</span>
-            <span>@Html.DisplayFor(model => model.ProductId)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.ProductId)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Số Lượng:</span>
-            <span>@Html.DisplayFor(model => model.ProductNumber)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.ProductNumber)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Tổng Chi Phí:</span>
-            <span>@Html.DisplayFor(model => model.TotalCost)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.TotalCost)</span>
         </div>
     </div>
     <hr />

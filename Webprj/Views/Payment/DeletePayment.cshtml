@@ -1,0 +1,54 @@
+﻿@model Webprj.Models.Payment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Xóa Giao Dịch</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/OrderView.css" />
+    <style>
+        .detail-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .detail-label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h3>Bạn có chắc chắn muốn xóa Giao Dịch: @Model.PaymentId không?</h3>
+    <div>
+        <h4>Thông Tin Chi Tiết</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Ngày Giao Dịch : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.TransactionDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Phương Thức Thanh Toán : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.PayMethod)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Mã Đơn Đặt Hàng : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.Order.OrderId)</span>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="ConfirmDeletePayment" method="post">
+        <input type="hidden" asp-for="PaymentId" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="PaymentView" class="btn btn-secondary">Trở Lại Danh Sách Giao Dịch</a>
+    </form>
+</body>
+</html>

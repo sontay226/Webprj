@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i8SPvR4B9Tx7aF+niSkEKTJ8FcHx9GHixn2SI0d12C0=",
+  "Hash": "g62ds8RlYk01WJkleZLDrd42z6zSmNl5GqCirFDTx8k=",
   "Source": "Webprj",
   "BasePath": "_content/Webprj",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\views\\OrderView.css"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\PaymentView.css",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "css/views/PaymentView.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\views\\PaymentView.css"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ProductView.css",

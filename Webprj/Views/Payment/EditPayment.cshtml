@@ -1,0 +1,54 @@
+﻿@model Webprj.Models.Payment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chỉnh Sửa Giao Dịch</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/PaymentView.css" />
+</head>
+<body>
+    <h3>Chỉnh Sửa Giao Dịch: @Model.PaymentId</h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="ConfirmEditPayment" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PaymentId" />
+                <div class="form-group">
+                    <label asp-for="PaymentId" class="control-label">Mã Giao Dịch : </label>
+                    <input asp-for="PaymentId" class="form-control" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderId" class="control-label">Mã Đơn Đặt Hàng : </label>
+                    <input asp-for="OrderId" class="form-control" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="TransactionDate" class="control-label">Ngày Giao Dịch</label>
+                    <input asp-for="TransactionDate" class="form-control" />
+                    <span asp-validation-for="TransactionDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayMethod" class="control-label">Phương Thức Thanh Toán</label>
+                    <input asp-for="PayMethod" class="form-control" />
+                    <span asp-validation-for="PayMethod" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="submit" value="Lưu" class="btn btn-primary" />
+                    <a asp-action="PaymentView" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

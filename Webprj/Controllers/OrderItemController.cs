@@ -7,7 +7,6 @@ namespace Webprj.Controllers
     {
         private readonly Test2WebContext _context;
         public OrderItemController( Test2WebContext context ) => _context = context;
-
         public IActionResult OrderItemView()
         {
             var data = _context.OrderItems.ToList();

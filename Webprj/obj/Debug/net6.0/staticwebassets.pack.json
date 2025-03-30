@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\views\\OrderView.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\PaymentView.css",
+      "PackagePath": "staticwebassets\\css\\views\\PaymentView.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ProductView.css",
       "PackagePath": "staticwebassets\\css\\views\\ProductView.css"
     },
