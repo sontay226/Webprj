@@ -9,6 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Xóa Sản Phẩm</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
     <style>
         .detail-row {
             margin-bottom: 10px;
@@ -76,7 +77,7 @@
     <form asp-action="ConfirmDeleteProduct" method="post">
         <input type="hidden" asp-for="ProductId" />
         <button type="submit" class="btn btn-danger">Xóa</button>
-        <a asp-action="ProductView" class="btn btn-secondary">Trở Lại Danh Sách Sản Phẩm</a>
+        <a asp-action="ProductView">Trở Lại Danh Sách Sản Phẩm</a>
     </form>
 
 </body>

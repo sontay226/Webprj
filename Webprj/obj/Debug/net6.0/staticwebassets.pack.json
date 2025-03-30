@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\CustomerView.css",
+      "PackagePath": "staticwebassets\\css\\views\\CustomerView.css"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ProductView.css",
+      "PackagePath": "staticwebassets\\css\\views\\ProductView.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

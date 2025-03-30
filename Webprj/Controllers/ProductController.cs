@@ -12,7 +12,7 @@ namespace Webprj.Controllers
             var data = _context.Products.ToList();
             return View (data);
         }
-
+        // adding controll 
         // detail controll 
         [HttpGet]
         public IActionResult DetailProduct(int ProductId )
