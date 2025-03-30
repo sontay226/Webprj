@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Webprj.Models.Shipment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông Tin Giao Hàng</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/ShipmentView.css" />
+</head>
+<body>
+<p>
+    <a asp-action="Create">Thêm</a> | 
+    <a asp-action="Find">Tìm Kiếm</a>
+</p>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Mã Giao Hàng</th>
+            <th>
+                Mã Đơn Đặt Hàng
+            </th>
+            <th>
+                Ngày Giao Hàng
+            </th>
+            <th>
+                Ngày Đặt Hàng
+            </th>
+            <th>
+                Tên Người Giao
+            </th>
+            <th>Tùy Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ShipmentId)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipperName)
+            </td>
+
+            <td>
+                <a asp-action="DeleteShipment" asp-route-ShipmentId="@item.ShipmentId">Xóa</a> |
+                <a asp-action="EditShipment" asp-route-ShipmentId="@item.ShipmentId">Sửa</a> |
+                <a asp-action="DetailShipment" asp-route-ShipmentId="@item.ShipmentId">Thông Tin</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

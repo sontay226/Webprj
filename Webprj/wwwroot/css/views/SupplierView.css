@@ -1,0 +1,88 @@
+﻿/* Định dạng chung cho trang ProductView */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Định dạng cho các liên kết */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Định dạng cho bảng */
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+    table.table th, table.table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    table.table th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+/* Định dạng cho tiêu đề */
+h3, h4 {
+    color: #333;
+}
+
+/* Nút hành động */
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+    .btn.btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .btn.btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+}
+
+table.table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Định dạng cho tiêu đề */
+h3, h4 {
+    color: #333;
+}
+
+/* Nút hành động */
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+    .btn.btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .btn.btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }

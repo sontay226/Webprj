@@ -1,0 +1,64 @@
+﻿@model Webprj.Models.Shipment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Xóa Đơn Giao</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/ShipmentView.css" />
+    <style>
+        .detail-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h3>Bạn có chắc chắn muốn xóa Đơn Giao : @Model.ShipmentId không?</h3>
+    <div>
+        <h4>Thông Tin Chi Tiết</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Mã Giao Hàng : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.ShipmentId)</span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Ngày Đơn Đặt Hàng : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.OrderId)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Giao Hàng : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.ShippingDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Đặt Hàng : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.PurchaseDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Tên Người Giao : </span>
+            <span class="detail-value"> @Html.DisplayFor(model => model.ShipperName)</span>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="ConfirmDeleteShipment" method="post">
+        <input type="hidden" asp-for="ShipmentId" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="ShipmentView" class="btn btn-secondary">Trở Lại Danh Sách Giao Hàng</a>
+    </form>
+</body>
+</html>

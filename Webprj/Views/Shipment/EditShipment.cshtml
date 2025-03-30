@@ -1,0 +1,59 @@
+﻿@model Webprj.Models.Shipment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chỉnh Sửa Giao Hàng</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/Shipment.css" />
+</head>
+<body>
+    <h3>Chỉnh Sửa Giao Hàng : @Model.ShipmentId</h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="ConfirmEditShipment" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ShipmentId" />
+                <div class="form-group">
+                    <label asp-for="ShipmentId" class="control-label">Mã Giao Hàng: </label>
+                    <input asp-for="ShipmentId" class="form-control" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderId" class="control-label">Mã Đơn Đặt Hàng : </label>
+                    <input asp-for="OrderId" class="form-control" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShippingDate" class="control-label">Ngày Giao Hàng</label>
+                    <input asp-for="ShippingDate" class="form-control" />
+                    <span asp-validation-for="ShippingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PurchaseDate" class="control-label">Ngày Đặt Hàng</label>
+                    <input asp-for="PurchaseDate" class="form-control" />
+                    <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShipperName" class="control-label">Tên Người Giao</label>
+                    <input asp-for="ShipperName" class="form-control" />
+                    <span asp-validation-for="ShipperName" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="submit" value="Lưu" class="btn btn-primary" />
+                    <a asp-action="ShipmentView" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

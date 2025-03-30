@@ -41,6 +41,14 @@
       "PackagePath": "staticwebassets\\css\\views\\ProductView.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\ShipmentView.css",
+      "PackagePath": "staticwebassets\\css\\views\\ShipmentView.css"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\SupplierView.css",
+      "PackagePath": "staticwebassets\\css\\views\\SupplierView.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

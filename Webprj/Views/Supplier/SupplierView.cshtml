@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Webprj.Models.Supplier>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông Tin Nhà Cung Cấp</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/SupplierView.css" />
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Thêm</a> | 
+        <a asp-action="Find">Tìm Kiếm</a>
+    </p>
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <th>Mã Nhà Cung Cấp</th>
+                <th>Tên Ngắn</th>
+                <th>Tên Đầy Đủ</th>
+                <th>Email</th>
+                <th>Số Điện Thoại</th>
+                <th>Địa Chỉ</th>
+                <th>Tùy Chọn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.SupplierId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ShortName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>
+                        <a asp-action="DeleteSupplier" asp-route-SupplierId="@item.SupplierId">Xóa</a> |
+                        <a asp-action="EditSupplier" asp-route-SupplierId="@item.SupplierId">Sửa</a> |
+                        <a asp-action="DetailSupplier" asp-route-SupplierId="@item.SupplierId">Thông Tin</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
