@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\views\\DiscountView.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\OrderItemView.css",
+      "PackagePath": "staticwebassets\\css\\views\\OrderItemView.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\OrderView.css",
       "PackagePath": "staticwebassets\\css\\views\\OrderView.css"
     },

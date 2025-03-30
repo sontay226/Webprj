@@ -12,12 +12,16 @@
     <style>
         .detail-row {
             margin-bottom: 10px;
+            white-space: nowrap;
         }
 
         .detail-label {
-            display: inline-block;
             width: 150px;
             font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
         }
     </style>
 </head>
@@ -28,31 +32,31 @@
         <hr/>
         <div class="detail-row">
             <span class="detail-label">Tên Khách Hàng:</span>
-            <span>@Html.DisplayFor(model => model.CustomerName)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CustomerName)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Email:</span>
-            <span>@Html.DisplayFor(model => model.Email)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Email)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Số Điện Thoại:</span>
-            <span>@Html.DisplayFor(model => model.PhoneNumber)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.PhoneNumber)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Địa Chỉ Giao Hàng:</span>
-            <span>@Html.DisplayFor(model => model.ShippingAddress)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.ShippingAddress)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Địa Chỉ Thanh Toán:</span>
-            <span>@Html.DisplayFor(model => model.BillingAddress)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.BillingAddress)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Mật Khẩu:</span>
-            <span>@Html.DisplayFor(model => model.PasswordHash)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.PasswordHash)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Ngày Tạo:</span>
-            <span>@Html.DisplayFor(model => model.CreatedAt)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CreatedAt)</span>
         </div>
         <hr/>
     </div>

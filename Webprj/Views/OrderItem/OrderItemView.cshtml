@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Webprj.Models.OrderItem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderItemView</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/OrderItemView.css" />
+</head>
+<body>
+<p>
+    <a asp-action="Create">Thêm</a>
+    <a asp-action="Find">Tìm Kiếm</a>
+</p>
+<table border="1" class="table">
+    <thead>
+        <tr>
+            <th>Mã Sản Phẩm Đặt</th>
+            <th>Mã Đơn Đặt Hàng</th>
+            <th>Mã Sản Phẩm</th>
+            <th>Số Lượng Sản Phẩm Đặt </th>
+            <th>Tổng Tiền</th>
+            <th>Tùy Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.OrderItemId)</td>
+            <td>@Html.DisplayFor(modelItem => item.OrderId)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductId)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProductNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.TotalCost)</td>            
+            <td>
+                <a asp-action="DeleteOrderItem" asp-route-OrderItemId="@item.OrderItemId">Xóa</a> |
+                <a asp-action="EditOrderItem" asp-route-OrderItemId="@item.OrderItemId">Sửa</a> |
+                <a asp-action="DetailOrderItem" asp-route-OrderItemId="@item.OrderItemId">Thông Tin</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

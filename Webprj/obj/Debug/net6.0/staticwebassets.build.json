@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HEcqoiPGMgmo88o6XzVBFtBRxpljpzBEaTL3kEHU+1Q=",
+  "Hash": "i8SPvR4B9Tx7aF+niSkEKTJ8FcHx9GHixn2SI0d12C0=",
   "Source": "Webprj",
   "BasePath": "_content/Webprj",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\views\\DiscountView.css"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\OrderItemView.css",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "css/views/OrderItemView.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\views\\OrderItemView.css"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\views\\OrderView.css",
