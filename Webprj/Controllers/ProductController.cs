@@ -74,5 +74,21 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+        [HttpGet]
+        public IActionResult CreateProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ConfirmCreateProduct( Product product )
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Products.Add(product);
+                _context.SaveChanges();
+                return RedirectToAction("ProductView");
+            }
+            return View("CreateProduct" , product);
+        }
     }
 }

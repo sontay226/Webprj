@@ -1,0 +1,85 @@
+﻿@model Webprj.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thêm Sản Phẩm Mới</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+</head>
+<body>
+    <h3>Thêm Sản Phẩm Mới</h3>
+    <hr />
+    <form asp-action="ConfirmCreateProduct" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Tên Sản Phẩm</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Mô Tả</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price" class="control-label">Giá</label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StockQuantity" class="control-label">Hàng Tồn</label>
+            <input asp-for="StockQuantity" class="form-control" />
+            <span asp-validation-for="StockQuantity" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageUrl" class="control-label">URL Ảnh</label>
+            <input asp-for="ImageUrl" class="form-control" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Certificate" class="control-label">Chứng Nhận</label>
+            <input asp-for="Certificate" class="form-control" />
+            <span asp-validation-for="Certificate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TechnicalSpecifications" class="control-label">Tính Năng Đặc Biệt</label>
+            <input asp-for="TechnicalSpecifications" class="form-control" />
+            <span asp-validation-for="TechnicalSpecifications" class="text-danger"></span>
+        </div>
+        // thiếu catgory id , và sup id 
+        <div class="form-group">
+            <label asp-for="CreatedAt" class="control-label">Tạo Vào</label>
+            <input asp-for="CreatedAt" class="form-control" />
+            <span asp-validation-for="CreatedAt" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UpdatedAt" class="control-label">Cập Nhật Vào</label>
+            <input asp-for="UpdatedAt" class="form-control" />
+            <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Lưu" class="btn btn-primary" />
+            <a asp-action="ProductView" class="btn btn-secondary">Hủy</a>
+        </div>
+    </form>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
