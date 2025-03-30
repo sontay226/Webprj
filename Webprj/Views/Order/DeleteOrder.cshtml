@@ -1,0 +1,70 @@
+﻿@model Webprj.Models.Order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Xóa Đơn Đặt Hàng</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/OrderView.css" />
+    <style>
+        .detail-row {
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>Bạn có chắc chắn muốn xóa Đơn Đặt Hàng: @Model.OrderId không?</h3>
+    <div>
+        <h4>Thông Tin Chi Tiết</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Mã Đặt Hàng:</span>
+            <span>@Html.DisplayFor(model => model.OrderId)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Mã Khách Hàng:</span>
+            <span>@Html.DisplayFor(model => model.CustomerId)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Ngày Đặt Hàng:</span>
+            <span>@Html.DisplayFor(model => model.OrderDate)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Địa Chỉ Giao Hàng:</span>
+            <span>@Html.DisplayFor(model => model.ShippingAddress)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Trạng Thái:</span>
+            <span>@Html.DisplayFor(model => model.Status)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Tổng Tiền:</span>
+            <span>@Html.DisplayFor(model => model.TotalAmount)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Phương Thức Thanh Toán:</span>
+            <span>@Html.DisplayFor(model => model.PaymentMethod)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Khách Hàng:</span>
+            <span>@Html.DisplayFor(model => model.Customer.CustomerName)</span>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="ConfirmDeleteOrder" method="post">
+        <input type="hidden" asp-for="OrderId" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="OrderView" class="btn btn-secondary">Trở Lại Danh Sách Đơn Hàng</a>
+    </form>
+</body>
+</html>
