@@ -11,7 +11,7 @@ namespace Webprj.Models
         public int ProductNumber { get; set; }
         public decimal? TotalCost { get; set; }
 
-        public virtual Order Order { get; set; } = null!;
-        public virtual Product Product { get; set; } = null!;
+        public virtual Order? Order { get; set; } = null!;
+        public virtual Product? Product { get; set; } = null!;
     }
 }

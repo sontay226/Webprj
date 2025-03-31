@@ -66,5 +66,45 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        public IActionResult CreateOrderItem()
+        {
+            return View(new OrderItem());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateOrderItem( OrderItem orderItem)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    _context.OrderItems.Add(orderItem);
+                    _context.SaveChanges();
+                    return RedirectToAction("OrderItemView");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateOrderItem" , orderItem);
+            }
+            return View("CreateOrderItem" , orderItem);
+        }
     }
 }
