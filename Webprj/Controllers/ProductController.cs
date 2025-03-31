@@ -74,19 +74,29 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+
         [HttpGet]
         public IActionResult CreateProduct()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult ConfirmCreateProduct( Product product )
         {
             if (ModelState.IsValid)
             {
-                _context.Products.Add(product);
-                _context.SaveChanges();
-                return RedirectToAction("ProductView");
+                try
+                {
+                    _context.Products.Add(product);
+                    _context.SaveChanges();
+                    return RedirectToAction("ProductView");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine (ex.ToString ());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
             }
             return View("CreateProduct" , product);
         }
