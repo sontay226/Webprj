@@ -78,7 +78,7 @@ namespace Webprj.Controllers
         [HttpGet]
         public IActionResult CreateProduct()
         {
-            return View();
+            return View(new Product());
         }
 
         [HttpPost]
