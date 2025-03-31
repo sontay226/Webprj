@@ -16,7 +16,7 @@ namespace Webprj.Models
         public string? PhoneNumber { get; set; }
         public string? ShippingAddress { get; set; }
         public string? BillingAddress { get; set; }
-        public string PasswordHash { get; set; } = null!;
+        public string? PasswordHash { get; set; } = null!;
         public DateTime? CreatedAt { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }

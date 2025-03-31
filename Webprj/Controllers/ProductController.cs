@@ -113,14 +113,8 @@ namespace Webprj.Controllers
                         Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
                     })
                     .ToList();
-
-                // Đặt breakpoint tại dòng dưới đây
-                System.Diagnostics.Debug.WriteLine("Đã debug ModelState errors");
-
                 return View("CreateProduct" , product);
             }
-
-            // Trả về view "CreateProduct" với model hiện tại để hiển thị lỗi
             return View("CreateProduct" , product);
         }
 

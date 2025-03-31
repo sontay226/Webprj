@@ -68,5 +68,46 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+        [HttpGet]
+        public IActionResult CreateCustomer()
+        {
+            return View(new Customer());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateCustomer( Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    customer.CreatedAt = DateTime.Now;
+                    _context.Customers.Add(customer);
+                    _context.SaveChanges();
+                    return RedirectToAction("CustomerView");
+                }
+                catch (Exception ex)
+                {
+                    // Ghi log lỗi
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateCustomer" , customer);
+            }
+            return View("CreateCustomer" , customer);
+        }
     }
 }

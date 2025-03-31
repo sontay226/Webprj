@@ -5,69 +5,72 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Xóa Khách Hàng</title>
+    <title>Xóa Khách hàng</title>
     <link rel="stylesheet" type="text/css" href="~/css/views/CustomerView.css" />
+    <style>
+        .detail-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
 
-<h3>Bạn Có Chắc Chắn Muốn Xóa Khách Hàng : @Model.CustomerName này ?</h3>
-<div>
-    <h4>Thông Tin Chi Tiết</h4>
+    <h3>Chắc Chắn Muốn Xóa Khách Hàng : @Model.CustomerName Này?</h3>
+    <div>
+        <h4>Thông Tin Chi Tiết</h4>
+        <hr />
+        <div class="detail-row">
+            <span class="detail-label">Mã Khách Hàng :</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CustomerId)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Tên Khách Hàng :</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CustomerName)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Email : </span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Email)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Số Điện Thoại :</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.PhoneNumber)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Địa Chỉ Giao Hàng:</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.ShippingAddress)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Địa Chỉ Thanh Toán :</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.BillingAddress)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Mật Khẩu Băm: </span>
+            <span class="detail-value">@Html.DisplayFor(model => model.PasswordHash)</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Tạo Vào :</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CreatedAt)</span>
+        </div>
+    </div>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CustomerName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CustomerName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShippingAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShippingAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BillingAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BillingAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-    </dl>
-    
     <form asp-action="ConfirmDeleteCustomer" method="post">
         <input type="hidden" asp-for="CustomerId" />
         <button type="submit" class="btn btn-danger">Xóa</button>
-        <a asp-action="CustomerVIew">Trở Lại Danh Sách Khách Hàng</a>
+        <a asp-action="CustomerView" class="btn btn-secondary">Trở Lại Danh Sách Khách Hàng</a>
     </form>
-</div>
 </body>
 </html>
