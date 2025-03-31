@@ -66,5 +66,44 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        public IActionResult CreateSupplier()
+        {
+            return View(new Supplier());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateSupplier( Supplier supplier)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Suppliers.Add(supplier);
+                    _context.SaveChanges();
+                    return RedirectToAction("SupplierView");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateSupplier" , supplier);
+            }
+            return View("CreateSupplier" , supplier);
+        }
     }
 }
