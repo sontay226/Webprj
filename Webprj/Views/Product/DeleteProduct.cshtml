@@ -12,13 +12,18 @@
     <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
     <style>
         .detail-row {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
 
         .detail-label {
-            display: inline-block;
             width: 150px;
             font-weight: bold;
+        }
+
+        .detail-value {
+            flex: 1;
         }
     </style>
 </head>
@@ -30,50 +35,50 @@
         <hr />
         <div class="detail-row">
             <span class="detail-label">Tên Sản Phẩm:</span>
-            <span>@Html.DisplayFor(model => model.Name)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Name)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Mô Tả:</span>
-            <span>@Html.DisplayFor(model => model.Description)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Description)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Giá:</span>
-            <span>@Html.DisplayFor(model => model.Price)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Price)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Hàng Tồn:</span>
-            <span>@Html.DisplayFor(model => model.StockQuantity)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.StockQuantity)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Link Ảnh:</span>
-            <span>@Html.DisplayFor(model => model.ImageUrl)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.ImageUrl)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Chứng Nhận:</span>
-            <span>@Html.DisplayFor(model => model.Certificate)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.Certificate)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Tính Năng Đặc Biệt:</span>
-            <span>@Html.DisplayFor(model => model.TechnicalSpecifications)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.TechnicalSpecifications)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Ngày Tạo:</span>
-            <span>@Html.DisplayFor(model => model.CreatedAt)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CreatedAt)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Ngày Cập Nhật:</span>
-            <span>@Html.DisplayFor(model => model.UpdatedAt)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.UpdatedAt)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Danh Mục:</span>
-            <span>@Html.DisplayFor(model => model.Category.CategoryId)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.CategoryId)</span>
         </div>
         <div class="detail-row">
             <span class="detail-label">Nhà Cung Cấp:</span>
-            <span>@Html.DisplayFor(model => model.Supplier.SupplierId)</span>
+            <span class="detail-value">@Html.DisplayFor(model => model.SupplierId)</span>
         </div>
     </div>
-
+    <hr />
     <form asp-action="ConfirmDeleteProduct" method="post">
         <input type="hidden" asp-for="ProductId" />
         <button type="submit" class="btn btn-danger">Xóa</button>
