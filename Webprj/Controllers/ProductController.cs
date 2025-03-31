@@ -82,12 +82,15 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken] 
         public IActionResult ConfirmCreateProduct( Product product )
         {
             if (ModelState.IsValid)
             {
                 try
                 {
+                    product.CreatedAt = DateTime.Now;
+                    product.UpdatedAt = DateTime.Now;
                     _context.Products.Add(product);
                     _context.SaveChanges();
                     return RedirectToAction("ProductView");
@@ -97,6 +100,10 @@ namespace Webprj.Controllers
                     Console.WriteLine (ex.ToString ());
                     ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
                 }
+            }
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
             }
             return View("CreateProduct" , product);
         }

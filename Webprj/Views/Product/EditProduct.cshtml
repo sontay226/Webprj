@@ -5,94 +5,90 @@
 }
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Thêm Sản Phẩm Mới</title>
-    <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+    <title>Sửa Sản Phẩm</title>
 </head>
 <body>
-    <h3>Thêm Sản Phẩm Mới</h3>
-    <hr />
-    <form asp-action="ConfirmCreateProduct" asp-controller="Product" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group">
-            <label asp-for="Name" class="control-label">Tên Sản Phẩm</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
+<h4>Thông Tin Chi Tiết</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ConfirmEditProduct" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Tên</label>
+                <input asp-for="Name"  class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Mô Tả</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Giá</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockQuantity" class="control-label">Hàng Tồn</label>
+                <input asp-for="StockQuantity" class="form-control" />
+                <span asp-validation-for="StockQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label">Mã Danh Mục</label>
+                <input asp-for="CategoryId" class="form-control" type="number" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplierId" class="control-label">Mã Nhà Cung Cấp</label>
+                <input asp-for="SupplierId" class="form-control" type="number" />
+                <span asp-validation-for="SupplierId" class="text-danger"></span>
+            </div>
 
-        <div class="form-group">
-            <label asp-for="Description" class="control-label">Mô Tả</label>
-            <textarea asp-for="Description" class="form-control"></textarea>
-            <span asp-validation-for="Description" class="text-danger"></span>
-        </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">URL Ảnh</label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Certificate" class="control-label">Chứng Chỉ</label>
+                <input asp-for="Certificate" class="form-control" />
+                <span asp-validation-for="Certificate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechnicalSpecifications" class="control-label">Chức Năng Đặc Biệt</label>
+                <input asp-for="TechnicalSpecifications" class="form-control" />
+                <span asp-validation-for="TechnicalSpecifications" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label">Ngày Tạo</label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedAt" class="control-label">Cập Nhật Vào</label>
+                <input asp-for="UpdatedAt" class="form-control" />
+                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
 
-        <div class="form-group">
-            <label asp-for="Price" class="control-label">Giá</label>
-            <input asp-for="Price" class="form-control" />
-            <span asp-validation-for="Price" class="text-danger"></span>
-        </div>
+<div>
+    <a asp-action="ProductView">Trở Lại Danh Sách Sản Phẩm</a>
+</div>
 
-        <div class="form-group">
-            <label asp-for="StockQuantity" class="control-label">Hàng Tồn</label>
-            <input asp-for="StockQuantity" class="form-control" />
-            <span asp-validation-for="StockQuantity" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="CategoryId" class="control-label">Mã Danh Mục</label>
-            <input asp-for="CategoryId" class="form-control" />
-            <span asp-validation-for="CategoryId" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="SupplierId" class="control-label">Mã Nhà Cung Cấp</label>
-            <input asp-for="SupplierId" class="form-control" />
-            <span asp-validation-for="SupplierId" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="ImageUrl" class="control-label">URL Ảnh</label>
-            <input asp-for="ImageUrl" class="form-control" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Certificate" class="control-label">Chứng Nhận</label>
-            <input asp-for="Certificate" class="form-control" />
-            <span asp-validation-for="Certificate" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="TechnicalSpecifications" class="control-label">Tính Năng Đặc Biệt</label>
-            <input asp-for="TechnicalSpecifications" class="form-control" />
-            <span asp-validation-for="TechnicalSpecifications" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="CreatedAt" class="control-label">Tạo Vào</label>
-            <input type="datetime-local" asp-for="CreatedAt" class="form-control" />
-            <span asp-validation-for="CreatedAt" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="UpdatedAt" class="control-label">Cập Nhật Vào</label>
-            <input type="datetime-local" asp-for="UpdatedAt" class="form-control" />
-            <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Lưu</button>
-            <a asp-action="ProductView" class="btn btn-secondary">Hủy</a>
-        </div>
-    </form>
-
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 </body>
 </html>
