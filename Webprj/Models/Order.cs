@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 
 namespace Webprj.Models
@@ -19,8 +20,8 @@ namespace Webprj.Models
         public string Status { get; set; } = null!;
         public decimal TotalAmount { get; set; }
         public string? PaymentMethod { get; set; }
-
-        public virtual Customer Customer { get; set; } = null!;
+        [ValidateNever]
+        public virtual Customer? Customer { get; set; } = null!;
         public virtual ICollection<OrderItem> OrderItems { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<Shipment> Shipments { get; set; }
