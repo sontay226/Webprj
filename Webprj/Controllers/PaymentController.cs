@@ -63,5 +63,45 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        public IActionResult CreatePayment()
+        {
+            return View(new Payment());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreatePayment( Payment payment )
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    payment.TransactionDate = DateTime.Now;
+                    _context.Payments.Add(payment);
+                    _context.SaveChanges();
+                    return RedirectToAction("PaymentView");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreatePayment" , payment);
+            }
+            return View("CreatePayment" , payment);
+        }
     }
 }

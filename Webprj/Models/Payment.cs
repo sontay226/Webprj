@@ -10,6 +10,6 @@ namespace Webprj.Models
         public DateTime? TransactionDate { get; set; }
         public string PayMethod { get; set; } = null!;
 
-        public virtual Order Order { get; set; } = null!;
+        public virtual Order? Order { get; set; } = null!;
     }
 }
