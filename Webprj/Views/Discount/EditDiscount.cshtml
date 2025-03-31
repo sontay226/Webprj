@@ -10,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>EditDiscount</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/DiscountView.css" />
 </head>
 <body>
 
@@ -45,6 +46,7 @@
                 <input asp-for="DiscountType" class="form-control" />
                 <span asp-validation-for="DiscountType" class="text-danger"></span>
             </div>
+            <hr />
             <div class="form-group">
                 <input type="submit" value="Lưu" class="btn btn-primary" />
             </div>
@@ -53,7 +55,7 @@
 </div>
 
 <div>
-    <a asp-action="DiscountView">Trở Lại Danh Sách Giảm Giá</a>
+    <a asp-action="DiscountView" class="btn btn-secondary">Trở Lại Danh Sách Giảm Giá</a>
 </div>
 
 @section Scripts {

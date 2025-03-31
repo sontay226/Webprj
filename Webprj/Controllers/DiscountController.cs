@@ -64,5 +64,46 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+        [HttpGet]
+        public IActionResult CreateDiscount()
+        {
+            return View(new Discount());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateDiscount( Discount discount)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    _context.Discounts.Add(discount);
+                    _context.SaveChanges();
+                    return RedirectToAction("DiscountView");
+                }
+                catch (Exception ex)
+                {
+                    // Ghi log lỗi
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateDiscount" , discount);
+            }
+            return View("CreateDiscount" , discount);
+        }
     }
 }
