@@ -61,5 +61,46 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+        [HttpGet]
+        public IActionResult CreateCategory()
+        {
+            return View(new Category());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateCategory( Category category )
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    _context.Categories.Add(category);
+                    _context.SaveChanges();
+                    return RedirectToAction("CategoryView");
+                }
+                catch (Exception ex)
+                {
+                    // Ghi log lỗi
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateCategory" , category );
+            }
+            return View("CreateCategory" , category);
+        }
     }
 }
