@@ -11,6 +11,6 @@ namespace Webprj.Models
         public DateTime? PurchaseDate { get; set; }
         public string? ShipperName { get; set; }
 
-        public virtual Order Order { get; set; } = null!;
+        public virtual Order? Order { get; set; } = null!;
     }
 }

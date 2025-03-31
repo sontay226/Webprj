@@ -64,5 +64,46 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        public IActionResult CreateShipment()
+        {
+            return View(new Shipment());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmCreateShipment( Shipment shipment)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    shipment.ShippingDate = DateTime.Now;
+                    shipment.PurchaseDate = DateTime.Now;
+                    _context.Shipments.Add(shipment);
+                    _context.SaveChanges();
+                    return RedirectToAction("ShipmentView");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+                return View("CreateShipment" , shipment);
+            }
+            return View("CreateShipment" , shipment);
+        }
     }
 }
