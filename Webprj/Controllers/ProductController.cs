@@ -82,7 +82,7 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] 
+        [ValidateAntiForgeryToken]
         public IActionResult ConfirmCreateProduct( Product product )
         {
             if (ModelState.IsValid)
@@ -97,15 +97,32 @@ namespace Webprj.Controllers
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine (ex.ToString ());
+                    // Ghi log lỗi
+                    Console.WriteLine(ex.ToString());
                     ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
                 }
             }
-            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+
+            if (!ModelState.IsValid)
             {
-                Console.WriteLine(error.ErrorMessage);
+                var allErrors = ModelState
+                    .Where(kvp => kvp.Value.Errors.Any())
+                    .Select(kvp => new
+                    {
+                        Field = kvp.Key ,
+                        Errors = kvp.Value.Errors.Select(e => e.ErrorMessage)
+                    })
+                    .ToList();
+
+                // Đặt breakpoint tại dòng dưới đây
+                System.Diagnostics.Debug.WriteLine("Đã debug ModelState errors");
+
+                return View("CreateProduct" , product);
             }
+
+            // Trả về view "CreateProduct" với model hiện tại để hiển thị lỗi
             return View("CreateProduct" , product);
         }
+
     }
 }

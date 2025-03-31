@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 
 namespace Webprj.Models
@@ -23,9 +24,10 @@ namespace Webprj.Models
         public string? TechnicalSpecifications { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-
-        public virtual Category Category { get; set; } = null!;
-        public virtual Supplier Supplier { get; set; } = null!;
+        [ValidateNever]
+        public virtual Category? Category { get; set; } = null!;
+        [ValidateNever]
+        public virtual Supplier? Supplier { get; set; } = null!;
         public virtual ICollection<OrderItem> OrderItems { get; set; }
 
         public virtual ICollection<Discount> Discounts { get; set; }
