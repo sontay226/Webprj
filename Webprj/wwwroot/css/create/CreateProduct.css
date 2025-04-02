@@ -1,0 +1,131 @@
+﻿/* qtrung css */
+/* Container chính của form customer*/
+.form-container {
+    background-color: #4465da;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(85, 98, 105, 0.5);
+    width: 50%;
+    position: relative; /* Để căn dấu "X" vào bên trong form */
+    margin: 0 auto;
+}
+
+/* Tiêu đề chính của form */
+.title-head {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Các phần nhóm form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    /* Label của các input */
+    .form-group label {
+        display: block;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+/* Các input fields */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
+
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+/* Nút Gửi */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Nút Quay lại */
+.back-btn {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+}
+
+    .back-btn:hover {
+        background-color: #ddd;
+    }
+
+/* Các link trong form */
+a {
+    text-decoration: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .form-actions button {
+        padding: 8px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.reset-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+.close-btn {
+    background-color: #555;
+    color: white;
+}
+.product body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #b3daf0;
+    color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Webprj.bundle.scp.css"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\create\\CreateProduct.css",
+      "PackagePath": "staticwebassets\\css\\create\\CreateProduct.css"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\images\\391731430_1027752265329394_3753539653895413992_n.jpg",
+      "PackagePath": "staticwebassets\\images\\391731430_1027752265329394_3753539653895413992_n.jpg"
     },
     {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\js\\site.js",

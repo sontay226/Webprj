@@ -83,12 +83,23 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ConfirmCreateProduct( Product product )
+        public IActionResult ConfirmCreateProduct( Product product , IFormFile imageFile )
         {
             if (ModelState.IsValid)
             {
                 try
                 {
+                    if (imageFile != null && imageFile.Length > 0)
+                    {
+                        var fileName = Path.GetFileName(imageFile.FileName);
+                        var filePath = Path.Combine("wwwroot/images" , fileName);
+
+                        using (var stream = new FileStream(filePath , FileMode.Create))
+                        {
+                            imageFile.CopyTo(stream);
+                        }
+                        product.ImageUrl = $"/images/{fileName}";
+                    }
                     product.CreatedAt = DateTime.Now;
                     product.UpdatedAt = DateTime.Now;
                     _context.Products.Add(product);
@@ -97,7 +108,6 @@ namespace Webprj.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Ghi log lỗi
                     Console.WriteLine(ex.ToString());
                     ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
                 }

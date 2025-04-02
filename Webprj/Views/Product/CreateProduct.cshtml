@@ -8,76 +8,83 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Thêm Sản Phẩm Mới</title>
-    <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
 </head>
-<body>
-<h3>Thêm Sản Phẩm Mới</h3>
+<body class="products">
+<div class="form-container">
+<h3 class="title-head">Thêm Sản Phẩm Mới</h3>
 <hr />
-<form asp-action="ConfirmCreateProduct" method="post">
+<form asp-action="ConfirmCreateProduct" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
     <div class="form-group">
-        <label asp-for="Name" class="control-label">Tên Sản Phẩm *</label>
-        <input asp-for="Name" class="form-control" required />
+        <label asp-for="Name">Tên Sản Phẩm *</label>
+        <input asp-for="Name" class="input-field" required />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="Description" class="control-label">Mô Tả</label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+        <textarea asp-for="Description" class="input-field"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="Price" class="control-label">Giá *</label>
-        <input asp-for="Price" class="form-control" required type="number" step="0.01" />
+        <input asp-for="Price" class="input-field" required type="number" step="0.01" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="StockQuantity" class="control-label">Hàng Tồn *</label>
-        <input asp-for="StockQuantity" class="form-control" required type="number" />
+        <input asp-for="StockQuantity" class="input-field" required type="number" />
         <span asp-validation-for="StockQuantity" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="CategoryId" class="control-label">Mã Danh Mục *</label>
-        <input asp-for="CategoryId" class="form-control" required type="text" />
+        <input asp-for="CategoryId" class="input-field" required type="text" />
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="SupplierId" class="control-label">Mã Nhà Cung Cấp *</label>
-        <input asp-for="SupplierId" class="form-control" required type="number" />
+        <input asp-for="SupplierId" class="input-field" required type="number" />
         <span asp-validation-for="SupplierId" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="ImageUrl" class="control-label">URL Ảnh</label>
-        <input asp-for="ImageUrl" class="form-control" type="url" />
+        <input asp-for="ImageUrl" class="input-field" type="url" />
         <span asp-validation-for="ImageUrl" class="text-danger"></span>
     </div>
 
     <div class="form-group">
+        <label for="imageFile" class="control-label">Chọn Ảnh</label>
+        <input type="file" name="imageFile" class="input-field" accept="image/*" />
+    </div>
+
+    <div class="form-group">
         <label asp-for="Certificate" class="control-label">Chứng Nhận</label>
-        <input asp-for="Certificate" class="form-control" />
+        <input asp-for="Certificate" class="input-field" />
         <span asp-validation-for="Certificate" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="TechnicalSpecifications" class="control-label">Tính Năng Đặc Biệt</label>
-        <input asp-for="TechnicalSpecifications" class="form-control" />
+        <input asp-for="TechnicalSpecifications" class="input-field" />
         <span asp-validation-for="TechnicalSpecifications" class="text-danger"></span>
     </div>
     <hr />
     <input type="hidden" asp-for="CreatedAt" />
     <input type="hidden" asp-for="UpdatedAt" />
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Lưu</button>
-        <a asp-action="ProductView" class="btn btn-secondary">Hủy</a>
+    <div class="form-actions">
+        <button type="submit" class="submit-btn">Lưu</button>
+        <button type="button" class="close-btn" onclick="location.href='@Url.Action("ProductView", "Product")'">Hủy</button>
     </div>
 </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</div>
 </body>
 </html>

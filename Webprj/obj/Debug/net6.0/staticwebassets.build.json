@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0qXpy18tcBXycYygnTmOUETCxQUDOQUxUiakEmwq/U0=",
+  "Hash": "blf0JLVTGft3MQJX/p5KQMViihG6uu0KiLtAZ/KfPbk=",
   "Source": "Webprj",
   "BasePath": "_content/Webprj",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Webprj.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\create\\CreateProduct.css",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "css/create/CreateProduct.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\create\\CreateProduct.css"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\css\\site.css",
@@ -281,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\images\\391731430_1027752265329394_3753539653895413992_n.jpg",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "images/391731430_1027752265329394_3753539653895413992_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\391731430_1027752265329394_3753539653895413992_n.jpg"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\wwwroot\\js\\site.js",
