@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Webprj.Models.Product
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <html>
@@ -8,7 +9,6 @@
         <nav class="menu-bar">
             <!-- Nút "Menu" -->
             <button class="btn-static" onclick="toggleMenu()">Menu</button>
-
             <!-- Danh sách danh mục, ẩn theo mặc định -->
             <ul class="menu-list" id="menu-list">
                 <li><a href="#">Danh Mục 1</a></li>
@@ -17,130 +17,83 @@
                 <li><a href="#">Danh Mục 4</a></li>
             </ul>
         </nav>
-        <div class="napthe-form-container">
-            <h1>Nạp Thẻ</h1>
-            <form class="form-container">
-                <div>
-                    <label style="font-size: 1vw;display: inline-block; width: auto;" for="nhamang">Chọn Nhà Mạng </label>
-                    <select id="nhamang">
-                        <option value="Viettel">
-                            Viettel
-                        </option>
-                        <option value="Vinaphone">
-                            Vinaphone
-                        </option>
-                        <option value="Mobiphone">
-                            Mobiphone
-                        </option>
-                    </select>
-                </div>
-                <div>
-                    <label style="font-size: 1vw; display: inline-block; width: auto;" for="menhgia">Chọn Mệnh Giá</label>
-                    <select id="menhgia">
-                        <option value="20.000">20.000</option>
-                        <option value="50.000"> 50.000</option>
-                        <option value="100.000"> 100.000</option>
-                        <option value="200.000"> 200.000</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="masothe" style="display: inline-block;font-size: 1vw;"> Mã Số Thẻ </label>
-                    <input type="text" id="masothe" name="masothe" style="display: inline-block;"> <br>
-                </div>
-                <div>
-                    <lable for="maserial" style="display: inline-block;font-size: 1vw"> Mã Serial </lable>
-                    <input type="text" id="maserial" name="maserial" style="display: inline-block;"> <br>
-                </div>
-                <input type="submit" value="Xác Nhận" style="background-color: #007bff; color: white;font-size:  1vw;border: 2px solid #FFD700;border-radius: 5px ;">
-            </form>
         </div>
-            
-        </div>
-
-         <!--lua chon loai Acc-->
-          <h1>Danh Sách Thiết Bị Y Tế</h1>
-        <!-- danh sách acc lol tự chọn --> 
-         
+          <h1>Chăm Sóc Sức Khỏe Gia Đình</h1>         
          <div class="container" >
             <div class="OptionAcc">
-                <img src="images/acctuchon.png" alt="LMHT Tự Chọn">
+                <img src="images/xelankarmaergolite.png">
                 <div class="card-content">
-                    <h3>LMHT Tự Chọn</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Xe Lăn Karma Ergo Lite</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
             <div class="OptionAcc">
-                <img src="images/accnuocngoai.png" alt="LMHT Nước Ngoài">
+                <img src="images/OMRON HEM 7156T.jpg">
                 <div class="card-content">
-                    <h3>LMHT Nước Ngoài</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Máy Đo Huyết Áp Tự Động OMROM HEM 7156T</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
-                        <div class="OptionAcc">
-                <img src="images/accnhieutuong.png" alt="LMHT Nhiều TƯớng">
+        <div class="OptionAcc">
+            <img src="images/May-do-duong-huyet-Accu-Chek-Guide-va-que-thu-400x400.jpg">
+            <div class="card-content">
+                <p>Máy Đo Đường Huyết Accu-Chek-Guide</p>
+                <p>Đã Bán : ???</p>
+                <button>Xem Chi Tiết</button>
+            </div>
+        </div>
+        <div class="OptionAcc">
+            <img src="images/may massage dr ho new 2020 .jpg">
+            <div class="card-content">
+                <p>Máy Massage Dr Ho 2020</p>
+                <p>Đã Bán : ???</p>
+                <button>Xem Chi Tiết</button>
+            </div>
+        </div>
+         </div>
+        <h1>Tủ Thuốc Gia Đình</h1>
+        <div class="container">
+            <div class="OptionAcc">
+                <img src="images/xelankarmaergolite.png">
                 <div class="card-content">
-                    <h3>LMHT Nhiều Tướng</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Xe Lăn Karma Ergo Lite</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
-                 <div class="OptionAcc">
-                <img src="images/acczinthongthao.png" alt="LMHT Zin Thông Thạo">
+            <div class="OptionAcc">
+                <img src="images/OMRON HEM 7156T.jpg">
                 <div class="card-content">
-                    <h3>LMHT Zin Thông Thạo</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Máy Đo Huyết Áp Tự Động OMROM HEM 7156T</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
-                <div class="OptionAcc">
-                <img src="images/dtclsieungon.png" alt="TFT Siu Ngon">
+            <div class="OptionAcc">
+                <img src="images/May-do-duong-huyet-Accu-Chek-Guide-va-que-thu-400x400.jpg">
                 <div class="card-content">
-                    <h3>TFT Siu Ngon</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Máy Đo Đường Huyết Accu-Chek-Guide</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
-                <div class="OptionAcc">
-                <img src="images/dtclnuocngoai.png" alt="TFT Nước Ngoài">
+            <div class="OptionAcc">
+                <img src="images/may massage dr ho new 2020 .jpg">
                 <div class="card-content">
-                    <h3>TFT Nước Ngoài</h3>
-                    <p>Số Tài Khoản : ???</p>
+                    <p>Máy Massage Dr Ho 2020</p>
                     <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
+                    <button>Xem Chi Tiết</button>
                 </div>
             </div>
-                <div class="OptionAcc">
-                <img src="images/pettimdtcl.png" alt="TFT Pet Tím">
-                <div class="card-content">
-                    <h3>TFT Pet Tím</h3>
-                    <p>Số Tài Khoản : ???</p>
-                    <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
-                </div>
-            </div>
-                <div class="OptionAcc">
-                <img src="images/santimdtcl.png" alt="TFT Sân Tím">
-                <div class="card-content">
-                    <h3>TFT Sân Tím</h3>
-                    <p>Số Tài Khoản : ???</p>
-                    <p>Đã Bán : ???</p>
-                    <button>Xem Tất Cả</button>
-                </div>
-            </div>
-         </div>      
-    </body>
+    </div>
+
+</body>
 <script>
     function toggleMenu() {
         var menuList = document.getElementById("menu-list");
         menuList.classList.toggle("show");
-        // toggle() sẽ thêm class "show" nếu chưa có, và gỡ class "show" nếu đã có
     }
 </script>
 

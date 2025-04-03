@@ -21,17 +21,28 @@
     bottom: 10px;
     left : auto;
 }
-
 .contact-container {
-    position: relative;
-    width: 100%;
+    display: flex;
+    flex-direction: column; /* Xếp chồng các nút lên nhau */
+    align-items: center; /* Căn giữa các nút theo chiều ngang */
+    gap: 10px;
+    padding: 20px;
 }
 
     .contact-container .btn-static {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
+        width: 300px; /* Đặt độ rộng cố định cho các nút */
+        padding: 15px;
+        font-size: 16px;
+        white-space: nowrap; /* Không cho chữ xuống dòng */
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center; /* Căn giữa chữ */
     }
+
 
 
 /* idx page */

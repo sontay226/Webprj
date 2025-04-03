@@ -17,6 +17,22 @@ namespace Webprj.Controllers
         {
             return View ();
         }
+        public IActionResult Page2()
+        {
+            return View ();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult Signin()
+        {
+            return View();
+        }
+        public IActionResult Signup()
+        {
+            return View();
+        }
 
         [ResponseCache (Duration = 0 , Location = ResponseCacheLocation.None , NoStore = true)]
         public IActionResult Error ()

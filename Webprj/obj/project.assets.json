@@ -10263,11 +10263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj.csproj",
+      "projectUniqueName": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\Webprj.csproj",
       "projectName": "Webprj",
-      "projectPath": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj.csproj",
+      "projectPath": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\Webprj.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\obj\\",
+      "outputPath": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

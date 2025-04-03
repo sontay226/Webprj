@@ -9,215 +9,223 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Webprj
 build_property.RootNamespace = Webprj
-build_property.ProjectDir = D:\Study\LearnCsharp\Webprj\Webprj\
+build_property.ProjectDir = D:\Study\LearnCsharp\Webprj\Webprj\Webprj\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Study\LearnCsharp\Webprj\Webprj
+build_property.MSBuildProjectDirectory = D:\Study\LearnCsharp\Webprj\Webprj\Webprj
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Category/CategoryView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Category/CategoryView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Category/CreateCategory.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Category/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Category/DeleteCategory.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Category/DeleteCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Category/DetailCategory.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Category/DetailCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlsQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Category/EditCategory.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Category/EditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Customer/CreateCustomer.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/CreateCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlQ3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Customer/CustomerView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/CustomerView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Customer/DeleteCustomer.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/DeleteCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlQ3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Customer/DetailCustomer.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/DetailCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlsQ3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Customer/EditCustomer.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/EditCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdEN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Discount/CreateDiscount.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/CreateDiscount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcQ3JlYXRlRGlzY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Discount/DeleteDiscount.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/DeleteDiscount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcRGVsZXRlRGlzY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Discount/DetailDiscount.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/DetailDiscount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcRGV0YWlsRGlzY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Discount/DiscountView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/DiscountView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcRGlzY291bnRWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Discount/EditDiscount.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/EditDiscount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcRWRpdERpc2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Home/Index.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/OrderItem/CreateOrderItem.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Home/Page2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdlMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/CreateOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXENyZWF0ZU9yZGVySXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/OrderItem/DeleteOrderItem.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/DeleteOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXERlbGV0ZU9yZGVySXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/OrderItem/DetailOrderItem.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/DetailOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXERldGFpbE9yZGVySXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/OrderItem/EditOrderItem.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/EditOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXEVkaXRPcmRlckl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/OrderItem/OrderItemView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/OrderItemView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXE9yZGVySXRlbVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Order/CreateOrder.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Order/CreateOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Order/DeleteOrder.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Order/DeleteOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGVsZXRlT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Order/DetailOrder.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Order/DetailOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlsT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Order/EditOrder.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Order/EditOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Order/OrderView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Order/OrderView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Payment/CreatePayment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Payment/CreatePayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxDcmVhdGVQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Payment/DeletePayment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Payment/DeletePayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZWxldGVQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Payment/DetailPayment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Payment/DetailPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZXRhaWxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Payment/EditPayment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Payment/EditPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxFZGl0UGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Payment/PaymentView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Payment/PaymentView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxQYXltZW50Vmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Product/CreateProduct.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Product/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Product/DeleteProduct.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Product/DeleteProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGVQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Product/DetailProduct.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Product/DetailProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Product/EditProduct.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Product/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Product/ProductView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Product/ProductView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0Vmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shared/Error.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shipment/CreateShipment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shipment/CreateShipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcQ3JlYXRlU2hpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shipment/DeleteShipment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shipment/DeleteShipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcRGVsZXRlU2hpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shipment/DetailShipment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shipment/DetailShipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcRGV0YWlsU2hpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shipment/EditShipment.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shipment/EditShipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcRWRpdFNoaXBtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shipment/ShipmentView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shipment/ShipmentView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcU2hpcG1lbnRWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Supplier/CreateSupplier.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Supplier/CreateSupplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcQ3JlYXRlU3VwcGxpZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Supplier/DeleteSupplier.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Supplier/DeleteSupplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRGVsZXRlU3VwcGxpZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Supplier/DetailSupplier.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Supplier/DetailSupplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRGV0YWlsU3VwcGxpZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Supplier/EditSupplier.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Supplier/EditSupplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRWRpdFN1cHBsaWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Supplier/SupplierView.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Supplier/SupplierView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcU3VwcGxpZXJWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/_ViewImports.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/_ViewStart.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Study/LearnCsharp/Webprj/Webprj/Views/Shared/_Layout.cshtml]
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wunxse0unx

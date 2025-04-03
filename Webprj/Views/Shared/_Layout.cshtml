@@ -14,15 +14,18 @@
         </div>
         
         <div>
-            <button class="btn-static " onclick="window.open('contact.html','_blank')">
+            <button class="btn-static" onclick="window.open('@Url.Action("Contact", "Home")', '_blank')">
                 Contact
             </button>
-            <button class="btn-static " onclick="window.open('dangky.html','_blank')">
-                Đăng Ký
-            </button>
-            <button class="btn-static" onclick="window.open('dangnhap.html','_blank')">
+
+            <button class="btn-static" onclick="window.open('@Url.Action("Signup", "Home")', '_blank')">
                 Đăng Nhập
             </button>
+
+            <button class="btn-static" onclick="window.open('@Url.Action("Signin", "Home")', '_blank')">
+                Đăng Ký
+            </button>
+
         </div>
 
     </header>
@@ -32,9 +35,10 @@
 
     <footer class="border-top footer text-muted">
         <!-- Footer content -->
-        <button class="btn-static fixed-bottom-center" onclick="window.open('page2.html','_blank')">
-            Next Page
+        <button class="btn-static" onclick="window.open('@Url.Action("Page2", "Home")', '_blank')">
+            Page 2 
         </button>
+
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
