@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
 
@@ -76,20 +77,24 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ConfirmCreateCustomer( Customer customer)
+        public IActionResult ConfirmCreateCustomer( Customer customer , string Password , string ConfirmPassword)
         {
+            if ( Password != ConfirmPassword)
+            {
+                ModelState.AddModelError("" , "Mật khẩu và xác nhận mật khẩu không khớp , vui lòng kiểm tra lại!");
+            }
             if (ModelState.IsValid)
             {
                 try
                 {
                     customer.CreatedAt = DateTime.Now;
+                    customer.PasswordHash = Password;
                     _context.Customers.Add(customer);
                     _context.SaveChanges();
                     return RedirectToAction("CustomerView");
                 }
                 catch (Exception ex)
                 {
-                    // Ghi log lỗi
                     Console.WriteLine(ex.ToString());
                     ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
                 }

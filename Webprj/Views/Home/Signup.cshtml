@@ -1,0 +1,52 @@
+﻿@model Webprj.Models.Customer
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng Ký Tài Khoản</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body class="logsign-page">
+    <div class="container">
+        <h1 class="dangkytaikhoan">Đăng Ký Tài Khoản</h1>
+    </div>
+    <div class="form-container">
+        <form asp-action="ConfirmCreateCustomer" asp-controller="Customer" method="post">
+            @Html.AntiForgeryToken()
+            <div>
+                <label asp-for="CustomerName">Tên Đăng Ký</label>
+                <input asp-for="CustomerName" />
+            </div>
+            <div>
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" type="email" />
+            </div>
+            <div>
+                <label asp-for="PhoneNumber">Số Điện Thoại</label>
+                <input asp-for="PhoneNumber" />
+            </div>
+            <div>
+                <label asp-for="ShippingAddress">Địa Chỉ Giao Hàng</label>
+                <input asp-for="ShippingAddress" />
+            </div>
+            <div>
+                <label asp-for="BillingAddress">Địa Chỉ Thanh Toán</label>
+                <input asp-for="BillingAddress" />
+            </div>
+            <div>
+                <label>Mật khẩu</label>
+                <input type="password" name="Password" />
+            </div>
+            <div>
+                <label>Xác nhận mật khẩu</label>
+                <input type="password" name="ConfirmPassword" />
+            </div>
+            <input type="submit" value="Đăng Ký" />
+        </form>
+    </div>
+</body>
+</html>
