@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Webprj.Models;
 
 namespace Webprj.Models
 {
@@ -37,6 +40,7 @@ namespace Webprj.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
@@ -48,8 +52,8 @@ namespace Webprj.Models
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Customer__A9D1053485F331D6")
-                    .IsUnique();
+                entity.HasIndex(e => e.Email , "UQ__Customer__A9D1053485F331D6")
+    .IsUnique();
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 

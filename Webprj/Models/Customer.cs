@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 namespace Webprj.Models
 {
-    public partial class Customer
+    public partial class Customer : IdentityUser<int>
     {
         public Customer()
         {
             Orders = new HashSet<Order>();
         }
-
         public int CustomerId { get; set; }
         public string CustomerName { get; set; } = null!;
         public string Email { get; set; } = null!;

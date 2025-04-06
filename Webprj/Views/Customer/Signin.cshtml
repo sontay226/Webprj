@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Webprj.Models.ViewModel.SignupViewModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -15,15 +16,16 @@
         <div class="container">
             <h1 class="dangnhaptaikhoan">Đăng Nhập Tài Khoản</h1>
         </div>
-        <form>
+        <form asp-action="Signin" asp-controller="Customer" method="post">
+            @Html.AntiForgeryToken()
             <div class="form-container">
                 <div>
-                    <label for="tentaikhoan">Tên Tài Khoản</label>
-                    <input type="text" id="tentaikhoan" name="tentaikhoan">
+                    <label for="Email">Email</label>
+                    <input type="text" id="email" name="Email">
                 </div>
                 <div>
                 <label for="matkhau">Mật Khẩu</label>
-                <input type="password" id="matkhau" name="matkhau">
+                <input type="password" id="matkhau" name="Password">
                 </div>
             </div>
             <input type="submit" value="Đăng Nhập">

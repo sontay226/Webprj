@@ -5,45 +5,49 @@
     <meta charset="utf-8">
     <meta name="author" content="Sơn Tây">
     <link rel="stylesheet" href="~/css/style.css" />
-
 </head>
 <body class="index-page">
     <header class="header-container">
         <div class="">
             <h1 class="chaomung">Shop Bán Thiết Bị Y Tế</h1>
         </div>
-        
+
         <div>
             <button class="btn-static" onclick="window.open('@Url.Action("Contact", "Home")', '_blank')">
                 Contact
             </button>
 
-            <button class="btn-static" onclick="window.open('@Url.Action("Signin", "Home")', '_blank')">
-                Đăng Nhập
-            </button>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span>Xin chào, @User.Identity.Name</span>
+                <button class="btn-static" onclick="window.open('@Url.Action("Logout", "Customer")', '_self')">
+                    Đăng Xuất
+                </button>
+            }
+            else
+            {
+                <button class="btn-static" onclick="window.open('@Url.Action("Signin", "Customer")', '_blank')">
+                    Đăng Nhập
+                </button>
 
-            <button class="btn-static" onclick="window.open('@Url.Action("Signup", "Home")', '_blank')">
-                Đăng Ký
-            </button>
-
+                <button class="btn-static" onclick="window.open('@Url.Action("Signup", "Customer")', '_blank')">
+                    Đăng Ký
+                </button>
+            }
         </div>
-
     </header>
 
     @RenderBody()
-
 
     <footer class="border-top footer text-muted">
         <!-- Footer content -->
         <button class="btn-static" onclick="window.open('@Url.Action("Page2", "Home")', '_blank')">
             Trang Tiếp Theo
         </button>
-
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
-
 </body>
 </html>

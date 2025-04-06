@@ -1,19 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
+using Webprj.Models.ViewModel;
 
 namespace Webprj.Controllers
 {
     public class CustomerController : Controller
     {
         private readonly Test2WebContext _context;
-        public CustomerController ( Test2WebContext context ) => _context = context;
+        public CustomerController( Test2WebContext context )
+        {
+            _context = context;
+        }
+
         public IActionResult CustomerView ()
         {
             var data = _context.Customers.ToList ();
             return View ( data );
         }
+
         [HttpGet]
         public IActionResult DetailCustomer ( int CustomerId)
         {
@@ -53,6 +60,10 @@ namespace Webprj.Controllers
         [HttpPost]
         public IActionResult ConfirmEditCustomer( Customer customer)
         {
+            if ( !ModelState.IsValid )
+            {
+                return View("EditCustomer" , customer);
+            }
             var data = _context.Customers.Find (customer.CustomerId);
             if (data != null)
             {
@@ -79,7 +90,7 @@ namespace Webprj.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ConfirmCreateCustomer( Customer customer , string Password , string ConfirmPassword)
         {
-            if ( Password != ConfirmPassword)
+            if (Password != ConfirmPassword)
             {
                 ModelState.AddModelError("" , "Mật khẩu và xác nhận mật khẩu không khớp , vui lòng kiểm tra lại!");
             }
@@ -88,7 +99,6 @@ namespace Webprj.Controllers
                 try
                 {
                     customer.CreatedAt = DateTime.Now;
-                    customer.PasswordHash = Password;
                     _context.Customers.Add(customer);
                     _context.SaveChanges();
                     return RedirectToAction("CustomerView");
@@ -113,6 +123,15 @@ namespace Webprj.Controllers
                 return View("CreateCustomer" , customer);
             }
             return View("CreateCustomer" , customer);
+        }
+        public IActionResult Signin()
+        {
+            return View(); 
+        }
+
+        public IActionResult Signup()
+        {
+            return View(); 
         }
     }
 }

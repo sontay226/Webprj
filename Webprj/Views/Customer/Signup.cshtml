@@ -15,10 +15,10 @@
         <h1 class="dangkytaikhoan">Đăng Ký Tài Khoản</h1>
     </div>
     <div class="form-container">
-        <form asp-action="ConfirmCreateCustomer" asp-controller="Customer" method="post">
+        <form asp-action="Signup" asp-controller="Customer" method="post">
             @Html.AntiForgeryToken()
             <div>
-                <label asp-for="CustomerName">Tên Đăng Ký</label>
+                <label asp-for="CustomerName">Họ Và Tên</label>
                 <input asp-for="CustomerName" />
             </div>
             <div>
