@@ -21,35 +21,20 @@
     <thead>
         <tr>
             <th>Mã Khách Hàng</th>
-                <th>
-                    Mật Khẩu
-                </th>
-            <th>
-                Tên Khách Hàng
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Số Điện Thoại
-            </th>
-            <th>
-                Địa Chỉ Giao Hàng
-            </th>
-            <th>
-                Địa Chỉ Thanh Toán
-            </th>
-
-            <th>
-                Tạo Vào
-            </th>
+            <th>Mật Khẩu</th>
+            <th>Tên Khách Hàng</th>
+            <th>Email</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ Giao Hàng</th>
+            <th>Địa Chỉ Thanh Toán</th>
+            <th>Tạo Vào</th>
             <th>Tùy Chọn</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>@Html.DisplayFor(modelItem => item.CustomerId )</td>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
             <td>@Html.DisplayFor(modelItem => item.PasswordHash)</td>
             <td>@Html.DisplayFor(modelItem => item.CustomerName)</td>
             <td>@Html.DisplayFor(modelItem => item.Email)</td>
@@ -58,9 +43,9 @@
             <td>@Html.DisplayFor(modelItem => item.BillingAddress)</td>
             <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
             <td>
-                <a asp-action="DeleteCustomer" asp-route-CustomerId="@item.Id">Xóa</a> |
-                <a asp-action="EditCustomer" asp-route-CustomerId="@item.Id">Sủa</a> |
-                <a asp-action="DetailCustomer" asp-route-CustomerId="@item.Id">Thông Tin</a> 
+                <a asp-action="DeleteCustomer" asp-route-id="@item.Id">Xóa</a> |
+                <a asp-action="EditCustomer" asp-route-id="@item.Id">Sủa</a> |
+                <a asp-action="DetailCustomer" asp-route-id="@item.Id">Thông Tin</a> 
             </td>
         </tr>
 }

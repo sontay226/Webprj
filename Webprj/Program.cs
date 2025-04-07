@@ -10,8 +10,15 @@ namespace Webprj
         public static void Main ( string[] args )
         {
             var builder = WebApplication.CreateBuilder (args);
+
             builder.Services.AddDbContext<Test2WebContext> (options =>
             options.UseSqlServer (builder.Configuration.GetConnectionString ("DefaultConnection")));
+            builder.Services.AddIdentity<Customer , IdentityRole<int>>(options =>
+            {
+                options.User.RequireUniqueEmail = true;      
+            })
+            .AddEntityFrameworkStores<Test2WebContext>()
+            .AddDefaultTokenProviders();
             // Add services to the container.
             builder.Services.AddControllersWithViews ();
 

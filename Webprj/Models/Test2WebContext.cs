@@ -8,7 +8,7 @@ using Webprj.Models;
 
 namespace Webprj.Models
 {
-    public partial class Test2WebContext : DbContext
+    public partial class Test2WebContext : IdentityDbContext<Customer , IdentityRole<int> , int>
     {
         public Test2WebContext()
         {
@@ -29,22 +29,13 @@ namespace Webprj.Models
         public virtual DbSet<Shipment> Shipments { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=SONTAY2206;Database=test_2_web;Trusted_Connection=True;");
-            }
-        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-
                 entity.Property(e => e.CategoryName).HasMaxLength(255);
 
                 entity.Property(e => e.Description).HasColumnType("text");
@@ -52,10 +43,9 @@ namespace Webprj.Models
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => e.Email , "UQ__Customer__A9D1053485F331D6")
-    .IsUnique();
+                entity.HasIndex(e => e.Email , "UQ__Customer__A9D1053485F331D6").IsUnique();
 
-                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
+                entity.Property(e => e.Id).HasColumnName("Id");
 
                 entity.Property(e => e.BillingAddress).HasMaxLength(255);
 
@@ -267,7 +257,14 @@ namespace Webprj.Models
 
             OnModelCreatingPartial(modelBuilder);
         }
-
+        protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder )
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=SONTAY2206;Database=test_2_web;Trusted_Connection=True;");
+            }
+        }
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

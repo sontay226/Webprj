@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -10,61 +11,66 @@ namespace Webprj.Controllers
     public class CustomerController : Controller
     {
         private readonly Test2WebContext _context;
-        public CustomerController( Test2WebContext context )
+        private readonly UserManager<Customer> _userManager;
+        private readonly SignInManager<Customer> _signInManager;
+        public CustomerController( Test2WebContext context , UserManager<Customer> um , SignInManager<Customer> sm)
         {
+            _userManager = um;
+            _signInManager = sm;
             _context = context;
         }
 
-        public IActionResult CustomerView ()
+        public async Task<IActionResult> CustomerView ()
         {
-            var data = _context.Customers.ToList ();
+            var data = await _context.Customers.ToListAsync ();
             return View ( data );
         }
 
         [HttpGet]
-        public IActionResult DetailCustomer ( int CustomerId)
+        public async Task<IActionResult> DetailCustomer ( int id)
         {
-            var data = _context.Customers.Find (CustomerId);
-            if (data != null) return View (data);
+            var data = await _context.Customers.FindAsync (id);
+            if (data != null) return  View (data);
             return NotFound ();
         }
         // delete controll
         [HttpGet]
-        public IActionResult DeleteCustomer ( int CustomerId )
+        public async Task<IActionResult> DeleteCustomer ( int id )
         {
-            var data = _context.Customers.Find (CustomerId);
+            var data = await _context.Customers.FindAsync (id);
             if (data != null) return View (data);
             return NotFound ();
         }
 
         [HttpPost]
-        public IActionResult ConfirmDeleteCustomer ( int CustomerId )
+        public async Task<IActionResult> ConfirmDeleteCustomer ( int id)
         {
-            var data = _context.Customers.Find (CustomerId);
+            var data = await _context.Customers.FindAsync (id);
             if (data != null)
             {
                 _context.Customers.Remove (data);
-                _context.SaveChanges ();
+                await _context.SaveChangesAsync ();
                 return RedirectToAction ("CustomerView");
             }
             return NotFound ();
         }
         // edit controll
         [HttpGet]
-        public IActionResult EditCustomer ( int CustomerId)
+        public async Task<IActionResult> EditCustomer ( int id)
         {
-            var data = _context.Customers.Find (CustomerId);
+            var data = await _context.Customers.FindAsync (id);
             if (data != null) return View (data);
             return NotFound ();
         }
         [HttpPost]
-        public IActionResult ConfirmEditCustomer( Customer customer)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ConfirmEditCustomer( Customer customer)
         {
             if ( !ModelState.IsValid )
             {
                 return View("EditCustomer" , customer);
             }
-            var data = _context.Customers.Find (customer.CustomerId);
+            var data = _context.Customers.Find (customer.Id);
             if (data != null)
             {
                 data.CustomerName = customer.CustomerName;
@@ -75,7 +81,7 @@ namespace Webprj.Controllers
                 data.PasswordHash = customer.PasswordHash;
                 data.CreatedAt = customer.CreatedAt;
                 _context.Customers.Update (data);
-                _context.SaveChanges ();
+                await _context.SaveChangesAsync ();
                 return RedirectToAction ("CustomerView");
             }
             return NotFound ();
@@ -88,19 +94,15 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ConfirmCreateCustomer( Customer customer , string Password , string ConfirmPassword)
+        public async Task<IActionResult> ConfirmCreateCustomer( Customer customer)
         {
-            if (Password != ConfirmPassword)
-            {
-                ModelState.AddModelError("" , "Mật khẩu và xác nhận mật khẩu không khớp , vui lòng kiểm tra lại!");
-            }
             if (ModelState.IsValid)
             {
                 try
                 {
                     customer.CreatedAt = DateTime.Now;
                     _context.Customers.Add(customer);
-                    _context.SaveChanges();
+                    await _context.SaveChangesAsync();
                     return RedirectToAction("CustomerView");
                 }
                 catch (Exception ex)
@@ -126,12 +128,36 @@ namespace Webprj.Controllers
         }
         public IActionResult Signin()
         {
-            return View(); 
+            return View();
         }
-
-        public IActionResult Signup()
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Signup() => View(new SignupViewModel());
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Signup(SignupViewModel model )
         {
-            return View(); 
+            if (!ModelState.IsValid) { return View(model); }
+            var user = new Customer
+            {
+                UserName = model.Email ,
+                Email = model.Email ,
+                CustomerName = model.CustomerName ,
+                PhoneNumber = model.PhoneNumber ,
+                ShippingAddress = model.ShippingAddress ,
+                BillingAddress = model.BillingAddress ,
+                CreatedAt = DateTime.UtcNow
+            };
+            var result = await _userManager.CreateAsync(user , model.Password);
+            if (!result.Succeeded)
+            {
+                foreach (var e in result.Errors)
+                    ModelState.AddModelError("" , e.Description);
+                return View(model);
+            }
+
+            await _signInManager.SignInAsync(user , isPersistent: false);
+            return RedirectToAction("Index" , "Home");
         }
     }
 }
