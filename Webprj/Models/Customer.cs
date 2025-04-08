@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webprj.Models
 {
+    [Table("Customers")]
     public partial class Customer : IdentityUser<int>
     {
         public Customer()

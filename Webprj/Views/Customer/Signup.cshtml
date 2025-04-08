@@ -12,14 +12,14 @@
 </head>
 <body class="logsign-page">
     <div class="container">
-        <h1 class="dangkytaikhoan">Đăng Ký Tài Khoản</h1>
+        <h1 class="dangkytaikhoan">Thông Tin Đăng Ký</h1>
     </div>
     <div class="form-container">
         <form asp-action="Signup" asp-controller="Customer" method="post">
             @Html.AntiForgeryToken()
             <div>
                 <label asp-for="CustomerName">Họ Và Tên</label>
-                <input asp-for="CustomerName" />
+                <input asp-for="CustomerName"/>
             </div>
             <div>
                 <label asp-for="Email">Email</label>

@@ -21,9 +21,7 @@ namespace Webprj.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.36")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -77,7 +75,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -137,7 +134,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
                     b.Property<int>("UserId")
@@ -156,7 +152,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
-
             modelBuilder.Entity("ProductDiscount", b =>
                 {
                     b.Property<int>("ProductId")
@@ -174,7 +169,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("Product_Discounts", (string)null);
                 });
-
             modelBuilder.Entity("Webprj.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -196,7 +190,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("Categories");
                 });
-
             modelBuilder.Entity("Webprj.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
@@ -290,7 +283,6 @@ namespace Webprj.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
-
             modelBuilder.Entity("Webprj.Models.Discount", b =>
                 {
                     b.Property<int>("DiscountId")

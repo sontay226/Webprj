@@ -148,15 +148,23 @@ namespace Webprj.Controllers
                 BillingAddress = model.BillingAddress ,
                 CreatedAt = DateTime.UtcNow
             };
-            var result = await _userManager.CreateAsync(user , model.Password);
+            Console.WriteLine("debug 1");
+            var result = await _userManager.CreateAsync( user, model.Password);
             if (!result.Succeeded)
             {
                 foreach (var e in result.Errors)
                     ModelState.AddModelError("" , e.Description);
                 return View(model);
             }
-
             await _signInManager.SignInAsync(user , isPersistent: false);
+            Console.WriteLine("debug 2");
+            return RedirectToAction("Index" , "Home");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index" , "Home");
         }
     }

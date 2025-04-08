@@ -16,13 +16,13 @@
             <button class="btn-static" onclick="window.open('@Url.Action("Contact", "Home")', '_blank')">
                 Contact
             </button>
-
             @if (User.Identity.IsAuthenticated)
             {
                 <span>Xin chào, @User.Identity.Name</span>
-                <button class="btn-static" onclick="window.open('@Url.Action("Logout", "Customer")', '_self')">
-                    Đăng Xuất
-                </button>
+                <form asp-controller="Customer" asp-action="Logout" method="post" style="display:inline;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-static">Đăng Xuất</button>
+                </form>
             }
             else
             {

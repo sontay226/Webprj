@@ -177,7 +177,8 @@ namespace Webprj.Migrations
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("CategoryID");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
@@ -191,7 +192,7 @@ namespace Webprj.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Customer", b =>
@@ -199,7 +200,7 @@ namespace Webprj.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnName("CustomerId");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -326,7 +327,7 @@ namespace Webprj.Migrations
                     b.HasIndex(new[] { "DiscountCode" }, "UQ__Discount__A1120AF5026E0037")
                         .IsUnique();
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discounts", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Order", b =>
@@ -340,7 +341,7 @@ namespace Webprj.Migrations
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int")
-                        .HasColumnName("CustomerID");
+                        .HasColumnName("CustomerId");
 
                     b.Property<DateTime?>("OrderDate")
                         .ValueGeneratedOnAdd()
@@ -367,7 +368,7 @@ namespace Webprj.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.OrderItem", b =>
@@ -399,7 +400,7 @@ namespace Webprj.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Payment", b =>
@@ -429,7 +430,7 @@ namespace Webprj.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Product", b =>
@@ -492,7 +493,7 @@ namespace Webprj.Migrations
 
                     b.HasIndex("SupplierId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Shipment", b =>
@@ -526,7 +527,7 @@ namespace Webprj.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Shipments");
+                    b.ToTable("Shipments", (string)null);
                 });
 
             modelBuilder.Entity("Webprj.Models.Supplier", b =>
@@ -565,7 +566,7 @@ namespace Webprj.Migrations
                     b.HasIndex(new[] { "Email" }, "UQ__Supplier__A9D105343E0D519B")
                         .IsUnique();
 
-                    b.ToTable("Suppliers");
+                    b.ToTable("Suppliers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

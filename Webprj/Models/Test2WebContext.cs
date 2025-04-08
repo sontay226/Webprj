@@ -28,9 +28,6 @@ namespace Webprj.Models
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<Shipment> Shipments { get; set; } = null!;
         public virtual DbSet<Supplier> Suppliers { get; set; } = null!;
-
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
