@@ -9,6 +9,10 @@
     <title>Đăng Ký Tài Khoản</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body class="logsign-page">
     <div class="container">
@@ -20,33 +24,43 @@
             <div>
                 <label asp-for="CustomerName">Họ Và Tên</label>
                 <input asp-for="CustomerName"/>
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
             </div>
             <div>
                 <label asp-for="Email">Email</label>
                 <input asp-for="Email" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div>
                 <label asp-for="PhoneNumber">Số Điện Thoại</label>
                 <input asp-for="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div>
                 <label asp-for="ShippingAddress">Địa Chỉ Giao Hàng</label>
                 <input asp-for="ShippingAddress" />
+                <span asp-validation-for="ShippingAddress" class="text-danger"></span>
             </div>
             <div>
                 <label asp-for="BillingAddress">Địa Chỉ Thanh Toán</label>
                 <input asp-for="BillingAddress" />
+                <span asp-validation-for="BillingAddress" class="text-danger"></span>
             </div>
             <div>
                 <label>Mật khẩu</label>
                 <input type="password" name="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div>
                 <label>Xác nhận mật khẩu</label>
                 <input type="password" name="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <input type="submit" value="Đăng Ký" />
         </form>
     </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
 </body>
 </html>

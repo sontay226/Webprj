@@ -20,6 +20,7 @@ namespace Webprj
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 3;
             })
             .AddEntityFrameworkStores<Test2WebContext>()
             .AddDefaultTokenProviders();

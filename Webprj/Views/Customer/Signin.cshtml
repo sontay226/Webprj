@@ -11,6 +11,10 @@
         <meta charset="utf-8">
         <meta name="author" content="Sơn Tây">
     <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
 </head>
     <body class="logsign-page">
         <div class="container">
@@ -22,14 +26,19 @@
                 <div>
                     <label for="Email">Email</label>
                     <input type="text" id="email" name="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div>
                 <label for="matkhau">Mật Khẩu</label>
                 <input type="password" id="matkhau" name="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
             <input type="submit" value="Đăng Nhập">
         </form>
     </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
     </body>
 </html>
