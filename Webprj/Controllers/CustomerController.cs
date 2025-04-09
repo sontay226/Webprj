@@ -126,10 +126,26 @@ namespace Webprj.Controllers
             }
             return View("CreateCustomer" , customer);
         }
+        // đăng nhập
+        [HttpGet]
         public IActionResult Signin()
         {
-            return View();
+            return View( new SigninViewModel());
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Signin( SigninViewModel model )
+        {
+            if ( !ModelState.IsValid ) return View( model );
+            var ans = await _signInManager.PasswordSignInAsync(
+                    model.Email ,
+                    model.Password,
+                    isPersistent: false,
+                    lockoutOnFailure : false
+                );
+            return RedirectToAction("Index" , "Home");
+        }
+        // đăng ký *almost done
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Signup() => View(new SignupViewModel());
