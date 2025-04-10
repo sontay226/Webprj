@@ -1,0 +1,37 @@
+﻿@model List<(Webprj.Models.Customer User, IList<string> Roles)>
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+}
+
+<h2>Danh sách người dùng</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Tên</th>
+            <th>Quyền</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.User.Email</td>
+                <td>@item.User.CustomerName</td>
+                <td>@string.Join(", " , item.Roles)</td>
+                <td>
+                    @if (!item.Roles.Contains("Admin"))
+                    {
+                        <a class="btn btn-sm btn-success" asp-action="Promote" asp-route-id="@item.User.Id">Gán Admin</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-sm btn-danger" asp-action="Demote" asp-route-id="@item.User.Id">Gỡ Admin</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

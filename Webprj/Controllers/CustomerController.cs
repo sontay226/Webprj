@@ -172,6 +172,7 @@ namespace Webprj.Controllers
                     ModelState.AddModelError("" , e.Description);
                 return View(model);
             }
+            await _userManager.AddToRoleAsync(user , "User");
             await _signInManager.SignInAsync(user , isPersistent: false);
             Console.WriteLine("debug 2");
             return RedirectToAction("Index" , "Home");

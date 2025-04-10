@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
-
+using Webprj.Seeders;
+using System.Xml;
 namespace Webprj
 {
     public class Program
     {
-        public static void Main ( string[] args )
+        public static async Task Main ( string[] args )
         {
             var builder = WebApplication.CreateBuilder (args);
 
@@ -29,6 +30,11 @@ namespace Webprj
             builder.Services.AddControllersWithViews ();
 
             var app = builder.Build ();
+            using ( var scope = app.Services.CreateScope() )
+            {
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
+                await DataSeeder.SeedRoles (roleManager);
+            }
 
             if (!app.Environment.IsDevelopment ())
             {
