@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Webprj.Models;
 
 namespace Webprj.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class ShipmentController : Controller
     {
         private readonly Test2WebContext _context;
