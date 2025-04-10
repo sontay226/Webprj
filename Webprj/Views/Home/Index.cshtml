@@ -1,4 +1,4 @@
-﻿@model Webprj.Models.Product
+﻿@model List<Product>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -15,68 +15,32 @@
             </ul>
         </nav>
         </div>
-          <h1>Chăm Sóc Sức Khỏe Gia Đình</h1>         
-         <div class="container" >
+        <h1>Chăm Sóc Sức Khỏe Gia Đình</h1>         
+        <div class="container" >
+        @foreach ( var item in Model.Where( p => p.CategoryId == 5))
+        {
             <div class="OptionAcc">
-                <img src="images/rocket 1h .jpg">
+                <img src="~/images/@item.ImageUrl" />
                 <div class="card-content">
-                    <h3>Rocket 1h </h3>
-                    <button>Xem Chi Tiết</button>
+                    <h3>@item.Name</h3>
+                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn btn-secondary">Xem Chi Tiết</a>
                 </div>
             </div>
-            <div class="OptionAcc">
-                <img src="images/OMRON HEM 7156T.jpg">
-                <div class="card-content">
-                    <h3>Máy Đo Huyết Áp Tự Động OMROM HEM 7156T</h3>
-                    <button>Xem Chi Tiết</button>
-                </div>
-            </div>
-        <div class="OptionAcc">
-            <img src="images/May-do-duong-huyet-Accu-Chek-Guide-va-que-thu-400x400.jpg">
-            <div class="card-content">
-                <h3>Máy Đo Đường Huyết Accu-Chek-Guide</h3>
-                <button>Xem Chi Tiết</button>
-            </div>
+        }
         </div>
-        <div class="OptionAcc">
-            <img src="images/may massage dr ho new 2020 .jpg">
-            <div class="card-content">
-                <h3>Máy Massage Dr Ho 2020</h3>
-                <button>Xem Chi Tiết</button>
-            </div>
-        </div>
-         </div>
         <h1>Tủ Thuốc Gia Đình</h1>
         <div class="container">
-            <div class="OptionAcc">
-                <img src="images/xelankarmaergolite.png">
+        @foreach ( var item in Model.Where ( p => p.CategoryId == 6 ) )
+        {
+            <div>
+                <img src="~/images/@item.ImageUrl" />
                 <div class="card-content">
-                    <h3>Xe Lăn Karma Ergo Lite</h3>
-                    <button>Xem Chi Tiết</button>
+                    <h3>@item.Name</h3>
+                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn btn-secondary">Xem Chi Tiết</a>
                 </div>
             </div>
-            <div class="OptionAcc">
-                <img src="images/OMRON HEM 7156T.jpg">
-                <div class="card-content">
-                    <h3>Máy Đo Huyết Áp Tự Động OMROM HEM 7156T</h3>
-                    <button>Xem Chi Tiết</button>
-                </div>
-            </div>
-            <div class="OptionAcc">
-                <img src="images/May-do-duong-huyet-Accu-Chek-Guide-va-que-thu-400x400.jpg">
-                <div class="card-content">
-                    <h3>Máy Đo Đường Huyết Accu-Chek-Guide</h3>
-                    <button>Xem Chi Tiết</button>
-                </div>
-            </div>
-            <div class="OptionAcc">
-                <img src="images/may massage dr ho new 2020 .jpg">
-                <div class="card-content">
-                    <h3>Máy Massage Dr Ho 2020</h3>
-                    <button>Xem Chi Tiết</button>
-                </div>
-            </div>
-    </div>
+        }    
+        </div>
 </body>
 <script>
     function toggleMenu() {
