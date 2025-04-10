@@ -19,13 +19,13 @@ namespace Webprj.Controllers
             _signInManager = sm;
             _context = context;
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CustomerView ()
         {
             var data = await _context.Customers.ToListAsync ();
             return View ( data );
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> DetailCustomer ( int id)
         {
@@ -33,7 +33,7 @@ namespace Webprj.Controllers
             if (data != null) return  View (data);
             return NotFound ();
         }
-        // delete controll
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> DeleteCustomer ( int id )
         {
@@ -41,7 +41,7 @@ namespace Webprj.Controllers
             if (data != null) return View (data);
             return NotFound ();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> ConfirmDeleteCustomer ( int id)
         {
@@ -54,7 +54,7 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
-        // edit controll
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> EditCustomer ( int id)
         {
@@ -62,6 +62,7 @@ namespace Webprj.Controllers
             if (data != null) return View (data);
             return NotFound ();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmEditCustomer( Customer customer)
@@ -86,12 +87,13 @@ namespace Webprj.Controllers
             }
             return NotFound ();
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult CreateCustomer()
         {
             return View(new Customer());
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmCreateCustomer( Customer customer)
