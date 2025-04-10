@@ -33,7 +33,9 @@ namespace Webprj
             using ( var scope = app.Services.CreateScope() )
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Customer>>();
                 await DataSeeder.SeedRoles (roleManager);
+                await DataSeeder.SeedAdminUser(userManager , roleManager);
             }
 
             if (!app.Environment.IsDevelopment ())
@@ -48,7 +50,6 @@ namespace Webprj
             app.UseRouting ();
 
             app.UseAuthentication ();
-
             app.UseAuthorization ();
             app.MapControllerRoute(
                 name: "areas" ,
