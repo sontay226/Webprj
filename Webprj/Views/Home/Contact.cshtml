@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
 <html>
@@ -25,4 +25,9 @@
         </button>
     </div>
 </body>
+@section Footer {
+    <div>
+        <button class="btn-static" onclick="window.open('@Url.Action("Index", "Home")', '_self')">Về Trang Chủ</button>
+    </div>
+}
 </html>

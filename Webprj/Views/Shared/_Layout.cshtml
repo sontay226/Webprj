@@ -26,11 +26,11 @@
             }
             else
             {
-                <button class="btn-static" onclick="window.open('@Url.Action("Signin", "Customer")', '_blank')">
+                <button class="btn-static" onclick="window.open('@Url.Action("Signin", "Customer")', '_self')">
                     Đăng Nhập
                 </button>
 
-                <button class="btn-static" onclick="window.open('@Url.Action("Signup", "Customer")', '_blank')">
+                <button class="btn-static" onclick="window.open('@Url.Action("Signup", "Customer")', '_self')">
                     Đăng Ký
                 </button>
             }
@@ -41,9 +41,7 @@
 
     <footer class="border-top footer text-muted">
         <!-- Footer content -->
-        <button class="btn-static" onclick="window.open('@Url.Action("Page2", "Home")', '_blank')">
-            Trang Tiếp Theo
-        </button>
+        @RenderSection("Footer" , required:false)
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

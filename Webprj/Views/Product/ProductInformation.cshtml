@@ -12,3 +12,10 @@
     <input type="number" name="quantity" value="1" min="1" />
     <button type="submit">Thêm vào giỏ hàng</button>
 </form>
+@section Footer {
+    <div>
+        <button class="btn-static" onclick="window.open('@Url.Action("Index", "Home")', '_self')">
+            Về Trang Chủ
+        </button>
+    </div>
+}
