@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mgCCk4R+3nRc+x3M9tSE9WkAXOSxUK/jPr1NcHKyztU=",
+  "Hash": "3X7iivL0YbmEGPYHZ986fPE9AhKRnsmNhVspGJzbCVs=",
   "Source": "Webprj",
   "BasePath": "_content/Webprj",
   "Mode": "Default",
@@ -302,25 +302,6 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\391731430_1027752265329394_3753539653895413992_n.jpg",
-      "SourceId": "Webprj",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\",
-      "BasePath": "_content/Webprj",
-      "RelativePath": "images/391731430_1027752265329394_3753539653895413992_n.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\391731430_1027752265329394_3753539653895413992_n.jpg"
-    },
-    {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\5eff4b7e33f3d7f35fc18399e70ce3f0_c78df2492f.jpg",
       "SourceId": "Webprj",
       "SourceType": "Discovered",
@@ -452,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\rocket 1h .jpg"
+    },
+    {
+      "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\sontaypham_avatar.jpg",
+      "SourceId": "Webprj",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\",
+      "BasePath": "_content/Webprj",
+      "RelativePath": "images/sontaypham_avatar.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\sontaypham_avatar.jpg"
     },
     {
       "Identity": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\xelankarmaergolite.png",
