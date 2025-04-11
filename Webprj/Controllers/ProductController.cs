@@ -131,9 +131,9 @@ namespace Webprj.Controllers
             return View("CreateProduct" , product);
         }
         // thông tin chi tiết của từng sản phẩm 
-        public async Task<IActionResult> ProductInformation ( int ProductId )
+        public async Task<IActionResult> ProductInformation ( int id )
         {
-            var product = await _context.Products.FindAsync(ProductId);
+            var product = await _context.Products.FindAsync(id);
             if ( product == null)
             {
                 return NotFound();
