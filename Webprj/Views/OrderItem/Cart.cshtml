@@ -1,0 +1,65 @@
+﻿@model Webprj.Models.ViewModel.CartVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Giỏ hàng";
+}
+<link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+
+<h2>Giỏ hàng của bạn</h2>
+
+@if (!Model.Items.Any())
+{
+    <p>Giỏ hàng trống.</p>
+    <a asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a>
+}
+else
+{
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content("~" + item.ImageUrl)" width="60" height="60" />
+                    @item.ProductName
+                </td>
+                <td>@item.UnitPrice.ToString("C")</td>
+                <td>
+                    <form asp-action="UpdateQuantity" method="post" style="display:inline;">
+                        <input type="hidden" name="orderItemId" value="@item.OrderItemID" />
+                        <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>@item.TotalCost.ToString("C")</td>
+                <td>
+                    <form asp-action="RemoveItem" method="post" style="display:inline;">
+                        <input type="hidden" name="orderItemId" value="@item.OrderItemID" />
+                        <button type="submit">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right"><strong>Tổng cộng:</strong></td>
+                <td colspan="2">@Model.Subtotal.ToString("C")</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form asp-action="Checkout" method="post">
+        <input type="hidden" name="orderId" value="@Model.OrderID" />
+        <button type="submit" class="btn btn-primary">Thanh toán</button>
+    </form>
+}

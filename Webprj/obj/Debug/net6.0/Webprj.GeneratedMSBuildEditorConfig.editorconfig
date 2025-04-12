@@ -114,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdlMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXENhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/CreateOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXENyZWF0ZU9yZGVySXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -128,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/EditOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXEVkaXRPcmRlckl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/OrderConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtXE9yZGVyQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/OrderItem/OrderItemView.cshtml]

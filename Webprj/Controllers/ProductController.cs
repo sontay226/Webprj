@@ -75,7 +75,7 @@ namespace Webprj.Controllers
                 _context.SaveChanges ();
                 return RedirectToAction ("ProductView");
             }
-            return NotFound ();
+            return NotFound (); 
         }
 
         [HttpGet]
