@@ -22,8 +22,9 @@
             <div class="OptionAcc">
                 <img src="@Url.Content("~" + item.ImageUrl)" alt="Ảnh sản phẩm" width="400" height="400" />
                 <div class="card-content">
-                    <h3>@item.Name</h3>
-                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn btn-secondary">Xem Chi Tiết</a>
+                    <h2>@item.Name</h2>
+                    <h2>$@item.Price</h2>
+                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn-static">Xem Chi Tiết</a>
                 </div>
             </div>
         }
@@ -35,8 +36,9 @@
             <div class="OptionAcc">
                 <img src="@Url.Content("~" + item.ImageUrl)" alt="Ảnh sản phẩm" width="400" height="400" />
                 <div class="card-content">
-                    <h3>@item.Name</h3>
-                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn btn-secondary">Xem Chi Tiết</a>
+                    <h2>@item.Name</h2>
+                    <h2>$@item.Price</h2>
+                    <a asp-controller="Product" asp-action="ProductInformation" asp-route-id="@item.ProductId" class="btn-static">Xem Chi Tiết</a>
                 </div>
             </div>
         }    
