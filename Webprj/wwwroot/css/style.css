@@ -104,18 +104,31 @@ h1 {
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    transform: scaleY(0); /* Ẩn menu */
     opacity: 0;
-    transform-origin: top;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out, visibility 0.3s;
 }
 
     .menu-list.show {
-        transform: scaleY(1); /* Hiển thị menu */
         opacity: 1;
+        visibility: visible;
+        max-height: 500px; /* Giá trị lớn hơn chiều cao thực tế của menu */
     }
 
+        .menu-list li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+            .menu-list li a:hover {
+                background-color: #ddd;
+            }
 
 /* napthe */
 .napthe {
