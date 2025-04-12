@@ -22,8 +22,8 @@ namespace Webprj.Models
         public string? PaymentMethod { get; set; }
         [ValidateNever]
         public virtual Customer? Customer { get; set; } = null!;
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
-        public virtual ICollection<Payment> Payments { get; set; }
-        public virtual ICollection<Shipment> Shipments { get; set; }
+        public virtual ICollection<OrderItem>? OrderItems { get; set; }
+        public virtual ICollection<Payment>? Payments { get; set; }
+        public virtual ICollection<Shipment>? Shipments { get; set; }
     }
 }

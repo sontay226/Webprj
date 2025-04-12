@@ -1,9 +1,13 @@
-﻿@{
+﻿@model Webprj.Models.Payment
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Xác nhận đơn hàng";
+    ViewData["Title"] = "Xác nhận thanh toán";
 }
+<link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+<h2>🎉 Thanh toán thành công!</h2>
+<p>Mã thanh toán: <strong>@Model.PaymentId</strong></p>
+<p>Đơn hàng: <strong>@Model.OrderId</strong></p>
+<p>Phương thức: <strong>@Model.PayMethod</strong></p>
+<p>Thời gian: <strong>@Model.TransactionDate</strong></p>
 
-<h2>Đặt hàng thành công!</h2>
-<p>Cảm ơn bạn đã mua hàng. Chúng tôi sẽ xử lý đơn hàng của bạn trong thời gian sớm nhất.</p>
-
-<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Quay lại trang chủ</a>
+<a asp-controller="Home" asp-action="Index" class="btn-static">Tiếp tục mua sắm</a>

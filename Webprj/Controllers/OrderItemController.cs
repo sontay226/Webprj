@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Webprj.Models;
@@ -7,17 +8,18 @@ using Webprj.Models.ViewModel;
 
 namespace Webprj.Controllers
 {
-    [Authorize(Roles = "Admin")]
 
     public class OrderItemController : Controller
     {
         private readonly Test2WebContext _context;
         public OrderItemController( Test2WebContext context ) => _context = context;
+        [Authorize(Roles = "Admin")]
         public IActionResult OrderItemView()
         {
             var data = _context.OrderItems.ToList();
             return View(data);
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public IActionResult DetailOrderItem( int OrderItemId )
@@ -26,6 +28,7 @@ namespace Webprj.Controllers
             if (data != null) return View(data);
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public IActionResult DeleteOrderItem( int OrderItemId )
@@ -34,6 +37,7 @@ namespace Webprj.Controllers
             if (data != null) return View(data);
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult ConfirmDeleteOrderItem( int OrderItemId )
@@ -47,6 +51,7 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public IActionResult EditOrderItem( int OrderItemId )
@@ -56,6 +61,7 @@ namespace Webprj.Controllers
                 return View(data);
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult ConfirmEditOrderItem( OrderItem orderItem )
@@ -170,15 +176,35 @@ namespace Webprj.Controllers
         [HttpPost, Authorize]
         public async Task<IActionResult> UpdateQuantity( int orderItemId , int quantity )
         {
-            var item = await _context.OrderItems.FindAsync(orderItemId);
-            if (item != null && quantity > 0)
+            var item = await _context.OrderItems
+                .Include(x => x.Product)
+                .FirstOrDefaultAsync(x => x.OrderItemId == orderItemId);
+
+            if (item == null)
             {
-                item.ProductNumber = quantity;
-                item.TotalCost = item.Product!.Price * quantity;
-                await _context.SaveChangesAsync();
+                TempData["Error"] = "Không tìm thấy sản phẩm trong giỏ hàng.";
+                return RedirectToAction("Cart");
             }
+
+            if (item.Product == null)
+            {
+                TempData["Error"] = $"Sản phẩm không tồn tại trong hệ thống (ProductId = {item.ProductId}).";
+                return RedirectToAction("Cart");
+            }
+
+            if (quantity <= 0)
+            {
+                TempData["Error"] = "Số lượng không hợp lệ.";
+                return RedirectToAction("Cart");
+            }
+
+            item.ProductNumber = quantity;
+            item.TotalCost = item.Product.Price * quantity;
+
+            await _context.SaveChangesAsync();
             return RedirectToAction("Cart");
         }
+
         // xử lý xóa sản phầm
         [HttpPost, Authorize]
         public async Task<IActionResult> RemoveItem( int orderItemId )
@@ -191,62 +217,96 @@ namespace Webprj.Controllers
             }
             return RedirectToAction("Cart");
         }
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Checkout( int orderId )
+        [HttpPost, Authorize]
+        public async Task<IActionResult> Checkout( CheckoutViewModel vm )
         {
-            var order = await _context.Orders
-                .Include(o => o.OrderItems!)
-                .ThenInclude(oi => oi.Product)
-                .FirstOrDefaultAsync(o => o.OrderId == orderId);
-
-            if (order == null || order.Status != "Pending")
-                return NotFound();
-
+            var order = await _context.Orders.Include(o => o.OrderItems!).ThenInclude(oi => oi.Product).FirstOrDefaultAsync(o => o.OrderId == vm.OrderID && o.Status == "Pending");
+            if (order == null) return NotFound();
             foreach (var item in order.OrderItems!)
-            {
                 if (item.Product!.StockQuantity < item.ProductNumber)
-                {
-                    ModelState.AddModelError("" , $"Sản phẩm '{item.Product.Name}' chỉ còn {item.Product.StockQuantity} cái trong kho.");
-                }
-            }
+                    ModelState.AddModelError("" , $"'{item.Product.Name}' chỉ còn {item.Product.StockQuantity}.");
 
             if (!ModelState.IsValid)
             {
-                var vm = new CartVm
-                {
-                    OrderID = order.OrderId ,
-                    Items = order.OrderItems!
-                        .Select(oi => new CartItemVm
-                        {
-                            OrderItemID = oi.OrderItemId ,
-                            ProductID = oi.ProductId ,
-                            ProductName = oi.Product!.Name ,
-                            ImageUrl = oi.Product.ImageUrl ,
-                            Quantity = oi.ProductNumber ,
-                            UnitPrice = oi.Product.Price ,
-                            TotalCost = (decimal) oi.TotalCost
-                        }).ToList()
-                };
-                return View("Cart" , vm);
+                // refill PayMethods
+                vm.PayMethods = new List<SelectListItem> {
+            new SelectListItem("COD","COD"),
+            new SelectListItem("ATM","ATM"),
+            new SelectListItem("Momo","Momo")
+        };
+                return View(vm);
             }
 
+            // cập nhật order
             order.Status = "Processing";
             order.OrderDate = DateTime.Now;
-            order.TotalAmount = (decimal) order.OrderItems!.Sum(oi => oi.TotalCost);
-
+            order.TotalAmount = (decimal) order.OrderItems.Sum(oi => oi.TotalCost);
             foreach (var item in order.OrderItems!)
-            {
                 item.Product!.StockQuantity -= item.ProductNumber;
-            }
+
+            // tạo payment
+            var payment = new Payment
+            {
+                OrderId = order.OrderId ,
+                TransactionDate = DateTime.Now ,
+                PayMethod = vm.SelectedPayMethod
+            };
+            _context.Payments.Add(payment);
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("OrderConfirmation");
-        }
-        public IActionResult OrderConfirmation()
-        {
-            return View();
+            return RedirectToAction("OrderConfirmation" , new { paymentId = payment.PaymentId });
         }
 
+        [HttpGet, Authorize]
+        public async Task<IActionResult> Checkout( int orderId )
+        {
+            // Lấy order Pending của user
+            var order = await _context.Orders
+                .Include(o => o.OrderItems!)
+                .ThenInclude(oi => oi.Product)
+                .FirstOrDefaultAsync(o => o.OrderId == orderId && o.Status == "Pending");
+
+            if (order == null)
+                return RedirectToAction("Cart");
+
+            // Khởi tạo ViewModel
+            var vm = new CheckoutViewModel
+            {
+                OrderID = order.OrderId ,
+                Items = order.OrderItems!
+                    .Select(oi => new CartItemVm
+                    {
+                        OrderItemID = oi.OrderItemId ,
+                        ProductID = oi.ProductId ,
+                        ProductName = oi.Product!.Name ,
+                        ImageUrl = oi.Product.ImageUrl ,
+                        Quantity = oi.ProductNumber ,
+                        UnitPrice = oi.Product.Price ,
+                        TotalCost = (decimal) oi.TotalCost
+                    })
+                    .ToList() ,
+                Subtotal = (decimal) order.OrderItems.Sum(oi => oi.TotalCost) ,
+                PayMethods = new List<SelectListItem>
+        {
+            new SelectListItem("Thanh toán khi nhận hàng (COD)", "cash"),
+            new SelectListItem("Chuyển khoản ngân hàng (BANK)", "bank_transfer"),
+            new SelectListItem("Ví Momo", "momo"),
+            new SelectListItem("Thẻ tín dụng" , "credit_card")
+        }
+            };
+
+            return View(vm);
+        }
+
+        [HttpGet, Authorize]
+        public async Task<IActionResult> OrderConfirmation( int paymentId )
+        {
+            var payment = await _context.Payments
+                .Include(p => p.Order)
+                .FirstOrDefaultAsync(p => p.PaymentId == paymentId);
+            if (payment == null) return NotFound();
+
+            return View(payment);
+        }
     }
 }

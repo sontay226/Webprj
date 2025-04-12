@@ -10,7 +10,7 @@
 @if (!Model.Items.Any())
 {
     <p>Giỏ hàng trống.</p>
-    <a asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a>
+    <a class="btn-static" asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a>
 }
 else
 {
@@ -21,17 +21,19 @@ else
                 <th>Đơn giá</th>
                 <th>Số lượng</th>
                 <th>Thành tiền</th>
-                <th></th>
+                <th>Tùy Chọn</th>
             </tr>
         </thead>
         <tbody>
         @foreach (var item in Model.Items)
         {
             <tr>
-                <td>
-                    <img src="@Url.Content("~" + item.ImageUrl)" width="60" height="60" />
-                    @item.ProductName
-                </td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="@Url.Content("~" + item.ImageUrl)" width="60" height="60" />
+                            <span>@item.ProductName</span>
+                        </div>
+                    </td>
                 <td>@item.UnitPrice.ToString("C")</td>
                 <td>
                     <form asp-action="UpdateQuantity" method="post" style="display:inline;">
@@ -58,8 +60,9 @@ else
         </tfoot>
     </table>
 
-    <form asp-action="Checkout" method="post">
+    <form asp-action="Checkout" method="get">
         <input type="hidden" name="orderId" value="@Model.OrderID" />
         <button type="submit" class="btn btn-primary">Thanh toán</button>
     </form>
+
 }

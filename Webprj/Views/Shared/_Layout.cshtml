@@ -23,6 +23,10 @@
                     @Html.AntiForgeryToken()
                     <button type="submit" class="btn-static">Đăng Xuất</button>
                 </form>
+                <form asp-controller="OrderItem" asp-action="Cart" method="get" style="display:inline"> 
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-static">Giỏ Hàng</button>
+                </form>
             }
             else
             {
