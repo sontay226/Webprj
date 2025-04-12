@@ -17,12 +17,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
 </head>
     <body class="logsign-page">
-        <div class="container">
+@*         <div class="container">
             <h1 class="dangnhaptaikhoan">Đăng Nhập Tài Khoản</h1>
-        </div>
+        </div> *@
         <form asp-action="Signin" asp-controller="Customer" method="post">
             @Html.AntiForgeryToken()
             <div class="form-container">
+                <h1 class="dangnhaptaikhoan">Đăng Nhập Tài Khoản</h1>
                 <div>
                     <label for="Email">Email</label>
                     <input type="text" id="email" name="Email">

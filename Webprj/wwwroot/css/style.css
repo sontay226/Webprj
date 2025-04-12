@@ -107,14 +107,14 @@ h1 {
     opacity: 0;
     visibility: hidden;
     max-height: 0;
-    overflow: hidden; /* Ẩn nội dung vượt quá */
+    overflow: hidden; 
     transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out, visibility 0.3s;
 }
 
     .menu-list.show {
         opacity: 1;
         visibility: visible;
-        max-height: 500px; /* Giá trị lớn hơn chiều cao thực tế của menu */
+        max-height: 500px;
     }
 
         .menu-list li a {
@@ -210,32 +210,28 @@ h1 {
     border-radius: 5px;
 }
 
-/* responsive grid for products */
 .container {
     display: grid;
     gap: 30px;
     padding: 20px;
-    width: 100%; /* Chiếm toàn bộ chiều ngang cửa sổ */
-    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi width */
-    /* Mặc định: 4 cột, mỗi cột chia đều không gian */
+    width: 100%; 
+    box-sizing: border-box; 
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* Khi cửa sổ nhỏ hơn 1024px: hiển thị 3 cột */
 @media only screen and (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Khi cửa sổ nhỏ hơn 768px: hiển thị 2 cột */
 @media only screen and (max-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Khi cửa sổ rất nhỏ (dưới 480px): hiển thị 1 cột */
+
 @media only screen and (max-width: 480px) {
     .container {
         grid-template-columns: 1fr;
@@ -286,4 +282,79 @@ h1 {
     margin-top: 30px;
     font-size: 0.9em;
     color: #888;
+}
+/* đăng ký đăng nhập css */
+.logsign-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    margin: 0;
+}
+
+    .logsign-page form div {
+        margin-bottom: 10px;
+    }
+
+    .logsign-page label {
+        display: block;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .logsign-page input {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.logsign-page .form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: center;
+}
+.dangkytaikhoan {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    text-align : center;
+}
+
+.dangnhaptaikhoan {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: center;
+    white-space : nowrap;
 }
