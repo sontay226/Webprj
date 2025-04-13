@@ -1,12 +1,13 @@
 ﻿@model Webprj.Models.ViewModel.CheckoutViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Thanh toán";
+    ViewBag.Title = "Thanh toán";
 }
-<link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+<link rel="stylesheet" href="~/css/views/ProductView.css" />
+
 <h2>Thanh toán đơn hàng #@Model.OrderID</h2>
 
-<table border="1" class="table">
+<table class="table" border="1">
     <thead>
         <tr>
             <th>Sản phẩm</th>
@@ -33,11 +34,74 @@
         </tr>
     </tfoot>
 </table>
-<form asp-action="Checkout" method="post">
+
+<form asp-action="Checkout" method="post" id="checkoutForm">
     <input type="hidden" asp-for="OrderID" />
+
     <div class="form-group">
         <label asp-for="SelectedPayMethod">Phương thức thanh toán</label>
-        <select asp-for="SelectedPayMethod" asp-items="Model.PayMethods" class="form-control"></select>
+        <select asp-for="SelectedPayMethod"
+                asp-items="Model.PayMethods"
+                class="form-control"
+                id="payMethodSelect">
+        </select>
+
+        <div id="payInfo" class="mt-2" style="display:none;">
+            <img id="payImage"
+                 src=""
+                 alt="QR code / Thông tin"
+                 style="max-width:300px; display:block; margin-top:0.5rem;" />
+            <p id="payText" class="mt-1 text-muted"></p>
+        </div>
     </div>
-    <button type="submit" class="btn btn-success">Xác nhận thanh toán</button>
+    <button type="submit"
+            class="chaomung text-center fw-bold btn btn-success"
+            onclick="this.disabled=true; this.form.submit();">
+        Xác nhận thanh toán
+    </button>
 </form>
+@section Scripts {
+    <script>
+        (function () {
+            const select = document.getElementById('payMethodSelect');
+            const infoDiv = document.getElementById('payInfo');
+            const img = document.getElementById('payImage');
+            const txt = document.getElementById('payText');
+
+            const payDetails = {
+                'cash': {
+                    img: '',
+                    text: ''
+                },
+                'bank_transfer': {
+                    img: '/images/sontaypham_bank_transfer.jpg',
+                },
+                'momo': {
+                    img: '/images/sontaypham_momo.jpg',
+                },
+                'credit_card': {
+                    img: '/images/creditcard.png',
+                }
+            };
+
+            function updatePayInfo() {
+                const val = select.value;
+                const d = payDetails[val] || { img: '', text: '' };
+
+                if (!d.img && !d.text) {
+                    infoDiv.style.display = 'none';
+                    return;
+                }
+
+                img.src = d.img;
+                img.style.display = d.img ? 'block' : 'none';
+                txt.innerHTML = d.text || '';
+                infoDiv.style.display = 'block';
+            }
+
+            document.addEventListener('DOMContentLoaded', updatePayInfo);
+            select.addEventListener('change', updatePayInfo);
+        })();
+    </script>
+}
+

@@ -1,13 +1,13 @@
 ﻿@model Webprj.Models.Product
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Thông Tin Sản Phẩm";
 }
 <img src="@Url.Content("~" + Model.ImageUrl)" alt="Ảnh sản phẩm" width="400" height="400" />
 <h2>@Model.Name</h2>
 <p>@Model.Description</p>
 <p>Giá: @Model.Price</p>
 <p>Số Lượng Còn : @Model.StockQuantity </p>
-
 <form asp-action="ConfirmCreateOrderItem" asp-controller="OrderItem" method="post">
     <input type="hidden" name="id" value="@Model.ProductId" />
     <label>Số lượng:</label>

@@ -20,7 +20,7 @@
         @foreach ( var item in Model.Where( p => p.CategoryId == 5))
         {
             <div class="OptionAcc">
-                <img src="@Url.Content("~" + item.ImageUrl)" alt="Ảnh sản phẩm" width="400" height="400" />
+                <img src="@Url.Content("~" + item.ImageUrl)" alt="Ảnh sản phẩm" width="400" height="400" style="border-radius : 8%;"/>
                 <div class="card-content">
                     <h2>@item.Name</h2>
                     <h2>$@item.Price</h2>

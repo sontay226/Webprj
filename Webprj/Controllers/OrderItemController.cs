@@ -222,18 +222,15 @@ namespace Webprj.Controllers
         {
             var order = await _context.Orders.Include(o => o.OrderItems!).ThenInclude(oi => oi.Product).FirstOrDefaultAsync(o => o.OrderId == vm.OrderID && o.Status == "Pending");
             if (order == null) return NotFound();
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            if (order.CustomerId != userId) return Forbid();
             foreach (var item in order.OrderItems!)
                 if (item.Product!.StockQuantity < item.ProductNumber)
                     ModelState.AddModelError("" , $"'{item.Product.Name}' chỉ còn {item.Product.StockQuantity}.");
 
             if (!ModelState.IsValid)
             {
-                // refill PayMethods
-                vm.PayMethods = new List<SelectListItem> {
-            new SelectListItem("COD","COD"),
-            new SelectListItem("ATM","ATM"),
-            new SelectListItem("Momo","Momo")
-        };
+                vm.PayMethods = GetPayMethods();
                 return View(vm);
             }
 
@@ -260,7 +257,6 @@ namespace Webprj.Controllers
         [HttpGet, Authorize]
         public async Task<IActionResult> Checkout( int orderId )
         {
-            // Lấy order Pending của user
             var order = await _context.Orders
                 .Include(o => o.OrderItems!)
                 .ThenInclude(oi => oi.Product)
@@ -269,7 +265,6 @@ namespace Webprj.Controllers
             if (order == null)
                 return RedirectToAction("Cart");
 
-            // Khởi tạo ViewModel
             var vm = new CheckoutViewModel
             {
                 OrderID = order.OrderId ,
@@ -286,17 +281,17 @@ namespace Webprj.Controllers
                     })
                     .ToList() ,
                 Subtotal = (decimal) order.OrderItems.Sum(oi => oi.TotalCost) ,
-                PayMethods = new List<SelectListItem>
-        {
-            new SelectListItem("Thanh toán khi nhận hàng (COD)", "cash"),
-            new SelectListItem("Chuyển khoản ngân hàng (BANK)", "bank_transfer"),
-            new SelectListItem("Ví Momo", "momo"),
-            new SelectListItem("Thẻ tín dụng" , "credit_card")
-        }
+                PayMethods = GetPayMethods()
             };
-
             return View(vm);
         }
+
+        private IEnumerable<SelectListItem> GetPayMethods() => new List<SelectListItem> { 
+            new SelectListItem("Thanh Toán Khi Nhận Hàng(COD)" , "cash"),
+            new SelectListItem("Chuyển khoản ngân hàng (Bank)" , "bank_transfer"),
+            new SelectListItem("Ví Momo" , "momo"),
+            new SelectListItem("Thẻ tín dụng" , "credit_card")
+        };
 
         [HttpGet, Authorize]
         public async Task<IActionResult> OrderConfirmation( int paymentId )

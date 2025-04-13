@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\OMRON HEM 7156T.jpg"
     },
     {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\creditcard.png",
+      "PackagePath": "staticwebassets\\images\\creditcard.png"
+    },
+    {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\focus.jpg",
       "PackagePath": "staticwebassets\\images\\focus.jpg"
     },
@@ -87,6 +91,14 @@
     {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\sontaypham_avatar.jpg",
       "PackagePath": "staticwebassets\\images\\sontaypham_avatar.jpg"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\sontaypham_bank_transfer.jpg",
+      "PackagePath": "staticwebassets\\images\\sontaypham_bank_transfer.jpg"
+    },
+    {
+      "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\sontaypham_momo.jpg",
+      "PackagePath": "staticwebassets\\images\\sontaypham_momo.jpg"
     },
     {
       "Id": "D:\\Study\\LearnCsharp\\Webprj\\Webprj\\Webprj\\wwwroot\\images\\xelankarmaergolite.png",
