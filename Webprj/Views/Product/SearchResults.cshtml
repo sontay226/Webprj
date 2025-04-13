@@ -1,0 +1,33 @@
+﻿@model List<Webprj.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Kết quả tìm kiếm";
+}
+
+<h2>Kết quả tìm kiếm cho "@ViewBag.Query"</h2>
+
+@if (!Model.Any())
+{
+    <p>Không tìm thấy sản phẩm phù hợp.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var p in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@p.ImageUrl" class="card-img-top" alt="@p.Name" />
+                    <div class="card-body">
+                        <h5 class="card-title">@p.Name</h5>
+                        <p class="card-text">@p.Price.ToString("C")</p>
+                        <a asp-action="ProductInformation" asp-route-id="@p.ProductId" class="btn btn-sm btn-primary">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

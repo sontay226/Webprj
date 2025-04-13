@@ -98,8 +98,6 @@ namespace Webprj.Controllers
                 }
 
                 var cart = await GetOrCreateCartAsync();
-
-                // Kiểm tra đã có sản phẩm này trong giỏ chưa
                 var existingItem = await _context.OrderItems
                     .FirstOrDefaultAsync(oi => oi.OrderId == cart.OrderId && oi.ProductId == id);
 

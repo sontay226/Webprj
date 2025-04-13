@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Webprj.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Webprj.Controllers
 {
-    [Authorize(Roles = "Admin")]
 
     public class ProductController : Controller
     {
         private readonly Test2WebContext _context;
         public ProductController (Test2WebContext context) => _context = context;
+        [Authorize(Roles = "Admin")]
         public IActionResult ProductView()
         {
             var data = _context.Products.ToList();
@@ -17,6 +18,7 @@ namespace Webprj.Controllers
         }
         // adding controll 
         // detail controll 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult DetailProduct(int ProductId )
         {
@@ -24,6 +26,8 @@ namespace Webprj.Controllers
             if (data != null) return View (data);
             return NotFound ();
         }
+        [Authorize(Roles = "Admin")]
+
         // delete controll
         [HttpGet]
         public IActionResult DeleteProduct ( int ProductId )
@@ -32,6 +36,7 @@ namespace Webprj.Controllers
             if (data != null) return View (data);
             return NotFound ();
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult ConfirmDeleteProduct( int ProductId) 
@@ -45,6 +50,8 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
+
         // edit controll
         [HttpGet]
         public IActionResult EditProduct ( int ProductId )
@@ -53,6 +60,8 @@ namespace Webprj.Controllers
             if ( data != null) return View (data);
             return NotFound ();
         }
+        [Authorize(Roles = "Admin")]
+
         [HttpPost]
         public IActionResult ConfirmEditProduct ( Product product )
         {
@@ -77,12 +86,14 @@ namespace Webprj.Controllers
             }
             return NotFound (); 
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public IActionResult CreateProduct()
         {
             return View(new Product());
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -140,5 +151,23 @@ namespace Webprj.Controllers
             }
             return View(product);
         }
+        // tìm kiếm sản phẩm
+        [HttpGet]
+        public async Task<IActionResult> Search( string query )
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                ViewBag.Query = "";
+                return View("SearchResults" , new List<Product>());
+            }
+
+            ViewBag.Query = query;
+            var matched = await _context.Products
+                .Where(p => EF.Functions.Like(p.Name , $"%{query}%"))
+                .ToListAsync();
+
+            return View("SearchResults" , matched);
+        }
     }
+
 }

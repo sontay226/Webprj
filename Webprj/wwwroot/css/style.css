@@ -358,3 +358,29 @@ input[type="submit"] {
     text-align: center;
     white-space : nowrap;
 }
+/* Thanh tìm kiếm */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+    .search-form .search-input {
+        width: 50%;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .search-form .search-button {
+        padding: 6px 12px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+    }
+
+        .search-form .search-button:hover {
+            background-color: #218838;
+        }

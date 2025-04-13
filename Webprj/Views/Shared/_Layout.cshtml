@@ -11,8 +11,13 @@
     <header class="header-container">
         <div class="">
             <h1 class="chaomung text-center fw-bold text-danger">Shop Bán Thiết Bị Y Tế</h1>
+            <form asp-controller="Product" asp-action="Search" method="get" class="d-flex justify-content-center mt-3">
+                <input type="text" name="query" value="@(ViewBag.Query ?? "")"
+                       placeholder="Tìm kiếm sản phẩm..."
+                       class="form-control w-50 me-2" />
+                <button type="submit" class="btn btn-success">🔍</button>
+            </form>
         </div>
-
         <div>
             <button class="btn-static" onclick="window.open('@Url.Action("Contact", "Home")', '_blank')">
                 Liên Hệ
