@@ -18,13 +18,20 @@ else
         {
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="@p.ImageUrl" class="card-img-top" alt="@p.Name" />
+                    <img src="@p.ImageUrl"
+                         class="card-img-top"
+                         alt="@p.Name"
+                         style="border-radius: 8%;" />
                     <div class="card-body">
-                        <h5 class="card-title">@p.Name</h5>
-                        <p class="card-text">@p.Price.ToString("C")</p>
-                        <a asp-action="ProductInformation" asp-route-id="@p.ProductId" class="btn btn-sm btn-primary">
+                        <h5 class="card-title">Tên sản phẩm : @p.Name</h5>
+                        <p class="card-text"> Mô Tả : @p.Description</p>
+                        <p class="card-text">Số lượng còn :  @p.StockQuantity</p>
+                        <p class="card-text">Giá : @p.Price.ToString("C")</p>
+                        <a asp-action="ProductInformation" asp-route-id="@p.ProductId" class="btn-static">
                             Xem chi tiết
                         </a>
+                        <hr />
+                        <a class="btn-static" asp-controller="Home" asp-action="Index">Tiếp tục mua sắm</a>
                     </div>
                 </div>
             </div>

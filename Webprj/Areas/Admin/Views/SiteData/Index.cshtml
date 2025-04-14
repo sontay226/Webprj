@@ -1,0 +1,57 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Quản lý dữ liệu";
+}
+
+<h2>Danh Sách Dữ Liệu Quản Lý</h2>
+
+<div class="contact-container">
+
+    <form asp-area="" asp-controller="Product" asp-action="ProductView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Sản Phẩm</button>
+    </form>
+
+    <form asp-area="" asp-controller="Customer" asp-action="CustomerView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Khách Hàng</button>
+    </form>
+
+    <form asp-area="" asp-controller="Category" asp-action="CategoryView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Danh Mục</button>
+    </form>
+
+    <form asp-area="" asp-controller="Discount" asp-action="DiscountView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Giảm Giá</button>
+    </form>
+
+    <form asp-area="" asp-controller="Order" asp-action="OrderView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Đơn Đặt Hàng</button>
+    </form>
+
+    <form asp-area="" asp-controller="OrderItem" asp-action="OrderItemView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Sản Phẩm Đặt</button>
+    </form>
+
+    <form asp-area="" asp-controller="Payment" asp-action="PaymentView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Thanh Toán</button>
+    </form>
+
+    <form asp-area="" asp-controller="Shipment" asp-action="ShipmentView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Giao Hàng</button>
+    </form>
+
+    <form asp-area="" asp-controller="Supplier" asp-action="SupplierView" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Nhà Cung Cấp</button>
+    </form>
+
+
+    <!-- Các form trong Area Admin -->
+    <form asp-area="Admin" asp-controller="Role" asp-action="Index" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Phân Quyền</button>
+    </form>
+
+    <form asp-area="Admin" asp-controller="User" asp-action="Index" method="get" style="display:inline;">
+        <button type="submit" class="btn-static">Quản Lý Người Dùng</button>
+    </form>
+
+</div>

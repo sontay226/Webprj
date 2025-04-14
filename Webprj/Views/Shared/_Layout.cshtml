@@ -12,10 +12,16 @@
         <div class="">
             <h1 class="chaomung text-center fw-bold text-danger">Shop Bán Thiết Bị Y Tế</h1>
             <form asp-controller="Product" asp-action="Search" method="get" class="d-flex justify-content-center mt-3">
-                <input type="text" name="query" value="@(ViewBag.Query ?? "")"
-                       placeholder="Tìm kiếm sản phẩm..."
-                       class="form-control w-50 me-2" />
-                <button type="submit" class="btn btn-success">🔍</button>
+                <div class="input-group input-group-lg" style="max-width: 500px;">
+                    <input type="text"
+                           name="query"
+                           value="@(ViewBag.Query ?? "")"
+                           placeholder="Tìm kiếm sản phẩm..."
+                           class="form-control rounded-end-0"> <!-- Thêm class border control -->
+                    <button class="btn btn-success rounded-start-0 px-3" type="submit">
+                        <span class="d-inline-block align-middle">🔍</span> <!-- Thêm wrapper cho icon -->
+                    </button>
+                </div>
             </form>
         </div>
         <div>
@@ -33,6 +39,10 @@
                     @Html.AntiForgeryToken()
                     <button type="submit" class="btn-static">Đăng Xuất</button>
                 </form>
+                <form asp-area="Admin" asp-controller="Sitedata" asp-action="Index" method="get" style="display:inline;">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn-static">Quản Lý Dữ Liệu</button>
+                </form>
             }
             else
             {
@@ -46,14 +56,10 @@
             }
         </div>
     </header>
-
     @RenderBody()
-
     <footer class="border-top footer text-muted">
-        <!-- Footer content -->
         @RenderSection("Footer" , required:false)
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
