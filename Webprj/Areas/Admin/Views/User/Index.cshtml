@@ -3,10 +3,15 @@
 @{
     ViewData["Title"] = "Quản lý người dùng";
 }
-
-<h2>Danh sách người dùng</h2>
-
-<table class="table table-bordered">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Quản Lý Phân Quyền</title>
+    <link rel="stylesheet" type="text/css" href="~/css/views/ProductView.css" />
+    <h2>Danh sách người dùng</h2>
+</head>
+<table border="1" class="table">
     <thead>
         <tr>
             <th>Email</th>
@@ -25,7 +30,7 @@
                 <td>
                     @if (!item.Roles.Contains("Admin"))
                     {
-                        <a class="btn btn-sm btn-success" asp-action="Promote" asp-route-id="@item.User.Id">Gán Admin</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Promote" asp-route-id="@item.User.Id">Gán Admin</a>
                     }
                     else
                     {
@@ -36,3 +41,4 @@
         }
     </tbody>
 </table>
+</html>
