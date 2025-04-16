@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Webprj.Models;
 using Webprj.Models.ViewModel;
 
@@ -184,5 +185,18 @@ namespace Webprj.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index" , "Home");
         }
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindCustomer( string name )
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                var all = await _context.Customers.ToListAsync();
+                return View("CustomerView" , all);
+            }
+            var matched = await _context.Customers.Where(p => EF.Functions.Like(p.CustomerName, $"%{name}%")).ToListAsync();
+            return View("CustomerView" , matched);
+        }
     }
 }
+    
