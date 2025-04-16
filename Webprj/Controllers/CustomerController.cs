@@ -166,7 +166,6 @@ namespace Webprj.Controllers
                 BillingAddress = model.BillingAddress ,
                 CreatedAt = DateTime.UtcNow
             };
-            Console.WriteLine("debug 1");
             var result = await _userManager.CreateAsync( user, model.Password);
             if (!result.Succeeded)
             {
@@ -176,7 +175,6 @@ namespace Webprj.Controllers
             }
             await _userManager.AddToRoleAsync(user , "User");
             await _signInManager.SignInAsync(user , isPersistent: false);
-            Console.WriteLine("debug 2");
             return RedirectToAction("Index" , "Home");
         }
         [HttpPost]

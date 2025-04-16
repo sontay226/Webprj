@@ -168,6 +168,18 @@ namespace Webprj.Controllers
 
             return View("SearchResults" , matched);
         }
+        // tìm kiểm thông tin trong trang quản lý sản phẩm 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindProduct( string name )
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                var all = await _context.Products.ToListAsync();
+                return View("ProductView" , all);
+            }
+            var matched = await _context.Products.Where(p => EF.Functions.Like(p.Name , $"%{name}%")).ToListAsync();
+            return View("ProductView" , matched);
+        }
     }
 
 }
