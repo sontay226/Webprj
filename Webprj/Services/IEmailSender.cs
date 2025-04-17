@@ -1,4 +1,6 @@
-﻿namespace Webprj.Services
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Webprj.Services
 {
     public interface IEmailSender
     {

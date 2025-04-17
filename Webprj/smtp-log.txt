@@ -1,0 +1,188 @@
+Connected to smtp://smtp.gmail.com:587/?starttls=always
+S: 220 smtp.gmail.com ESMTP 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-STARTTLS
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH PLAIN ********
+S: 235 2.7.0 Accepted
+C: MAIL FROM:<phamsontay2206@gmail.com> SIZE=871 BODY=8BITMIME
+C: RCPT TO:<phamsontay2206@gmail.com>
+S: 250 2.1.0 OK 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+S: 250 2.1.5 OK 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+C: DATA
+S: 354 Go ahead 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+C: From: Webprj Support <phamsontay2206@gmail.com>
+C: Date: Thu, 17 Apr 2025 18:46:14 +0700
+C: Subject: Reset =?utf-8?b?beG6rXQga2jhuql1?=
+C: Message-Id: <PXYRZREFXPU4.XBHCB4TURIZX2@sontay2206>
+C: To: phamsontay2206@gmail.com
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: Content-Transfer-Encoding: 8bit
+C: 
+C: 
+C:                 <p>Chào Phạm Sơn Tây,</p>
+C:                 <p>Bạn vừa yêu cầu đặt lại mật khẩu. Nhấp vào <a href='https://localhost:7001/Account/ResetPassword?token=CfDJ8KYhhQlGoHNIhis1fM0UqN6tTrcuvGjQlnQa%2F%2FFaNISjRBBkaMFI6098u7YwCRj7NPeNjm3aXJkh6B93%2FLf5m6%2FTK9xunLXbL8R0eoXEvHmMhD86dHdj4qChQM5gRi%2BW5OvSflwTR7Ua7iEjF3fIRYQ8OGfkzGmWKVadBQvyfzRRy94efl7sBnLAqWhc5qs%2Bug%3D%3D&amp;email=phamsontay2206@gmail.com'>đây</a> để tiếp tục.</p>
+C:                 <p>Nếu không phải bạn, vui lòng bỏ qua email này.</p>
+C: .
+S: 250 2.0.0 OK  1744890377 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+C: QUIT
+S: 221 2.0.0 closing connection 41be03b00d2f7-b0b22205bffsm2329412a12.57 - gsmtp
+Connected to smtp://smtp.gmail.com:587/?starttls=always
+S: 220 smtp.gmail.com ESMTP d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-STARTTLS
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH PLAIN ********
+S: 235 2.7.0 Accepted
+C: MAIL FROM:<phamsontay2206@gmail.com> SIZE=865 BODY=8BITMIME
+C: RCPT TO:<phamsontay2206@gmail.com>
+S: 250 2.1.0 OK d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+S: 250 2.1.5 OK d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+C: DATA
+S: 354 Go ahead d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+C: From: Webprj Support <phamsontay2206@gmail.com>
+C: Date: Thu, 17 Apr 2025 18:52:47 +0700
+C: Subject: Reset =?utf-8?b?beG6rXQga2jhuql1?=
+C: Message-Id: <LPK1XKGFXPU4.EES1AZAAZITN3@sontay2206>
+C: To: phamsontay2206@gmail.com
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: Content-Transfer-Encoding: 8bit
+C: 
+C: 
+C:                 <p>Chào Phạm Sơn Tây,</p>
+C:                 <p>Bạn vừa yêu cầu đặt lại mật khẩu. Nhấp vào <a href='https://localhost:7001/Account/ResetPassword?token=CfDJ8KYhhQlGoHNIhis1fM0UqN6kZTspQXw%2Fz0OTDwAXvu17iTLLHlxrr1P8ezTwq2CE9bZjMKgfQ0Q5nNwfc0u3HOk8Eb4XkZWMS5iDjk5sNRx0Mfie%2FGFDE0M1PMJWx0cEycMbERlNG34tYuoeSPD4xgdKD7CovRV%2BYvzQtwCKapkaVvsm6WI2zoOB7xjNSv01Ow%3D%3D&amp;email=phamsontay2206@gmail.com'>đây</a> để tiếp tục.</p>
+C:                 <p>Nếu không phải bạn, vui lòng bỏ qua email này.</p>
+C: .
+S: 250 2.0.0 OK  1744890769 d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+C: QUIT
+S: 221 2.0.0 closing connection d9443c01a7336-22c33ef105esm31380355ad.32 - gsmtp
+Connected to smtp://smtp.gmail.com:587/?starttls=always
+S: 220 smtp.gmail.com ESMTP d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-STARTTLS
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH PLAIN ********
+S: 235 2.7.0 Accepted
+C: MAIL FROM:<phamsontay2206@gmail.com> SIZE=871 BODY=8BITMIME
+C: RCPT TO:<phamsontay2206@gmail.com>
+S: 250 2.1.0 OK d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+S: 250 2.1.5 OK d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+C: DATA
+S: 354 Go ahead d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+C: From: Webprj Support <phamsontay2206@gmail.com>
+C: Date: Thu, 17 Apr 2025 18:56:42 +0700
+C: Subject: Reset =?utf-8?b?beG6rXQga2jhuql1?=
+C: Message-Id: <8A47XNHFXPU4.GUOOK2OQVKPD2@sontay2206>
+C: To: phamsontay2206@gmail.com
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: Content-Transfer-Encoding: 8bit
+C: 
+C: 
+C:                 <p>Chào Phạm Sơn Tây,</p>
+C:                 <p>Bạn vừa yêu cầu đặt lại mật khẩu. Nhấp vào <a href='https://localhost:7001/Account/ResetPassword?token=CfDJ8KYhhQlGoHNIhis1fM0UqN7fTmuQbR2n2%2FyluvSTl0OUzUtudi2OqP9miFN7jbENcMfRIpj8Id8t62L04WQwuqU%2FuGBhlQBB5JB3m5MlFaSfT7Yq8C44MRIQyMe25VobGMh965U0MOyh%2B62b0K3lnVxk5ZYp8Y1l7uFdYx%2BWGF%2BAeJ9fXrlU2p6rzwrL32qN%2Fg%3D%3D&amp;email=phamsontay2206@gmail.com'>đây</a> để tiếp tục.</p>
+C:                 <p>Nếu không phải bạn, vui lòng bỏ qua email này.</p>
+C: .
+S: 250 2.0.0 OK  1744891005 d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+C: QUIT
+S: 221 2.0.0 closing connection d9443c01a7336-22c33f1cd56sm31498945ad.83 - gsmtp
+Connected to smtp://smtp.gmail.com:587/?starttls=always
+S: 220 smtp.gmail.com ESMTP 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-STARTTLS
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: STARTTLS
+S: 220 2.0.0 Ready to start TLS
+C: EHLO SonTay2206
+S: 250-smtp.gmail.com at your service, [2001:ee0:4f4f:ebf0:c0d1:7eed:cdba:a71a]
+S: 250-SIZE 35882577
+S: 250-8BITMIME
+S: 250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+S: 250-ENHANCEDSTATUSCODES
+S: 250-PIPELINING
+S: 250-CHUNKING
+S: 250 SMTPUTF8
+C: AUTH PLAIN ********
+S: 235 2.7.0 Accepted
+C: MAIL FROM:<phamsontay2206@gmail.com> SIZE=869 BODY=8BITMIME
+C: RCPT TO:<phamsontay2206@gmail.com>
+S: 250 2.1.0 OK 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp
+S: 250 2.1.5 OK 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp
+C: DATA
+S: 354 Go ahead 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp
+C: From: Webprj Support <phamsontay2206@gmail.com>
+C: Date: Thu, 17 Apr 2025 18:59:01 +0700
+C: Subject: Reset =?utf-8?b?beG6rXQga2jhuql1?=
+C: Message-Id: <N758UAIFXPU4.FJCHJ1B4MGF33@sontay2206>
+C: To: phamsontay2206@gmail.com
+C: MIME-Version: 1.0
+C: Content-Type: text/html; charset=utf-8
+C: Content-Transfer-Encoding: 8bit
+C: 
+C: 
+C:                 <p>Chào Phạm Sơn Tây,</p>
+C:                 <p>Bạn vừa yêu cầu đặt lại mật khẩu. Nhấp vào <a href='https://localhost:7001/Account/ResetPassword?token=CfDJ8KYhhQlGoHNIhis1fM0UqN5eo4z183KnQf%2BccdM25k3MnaEFdheQEWPhCigBFY4eyhgj2It25SyWvQkGtyp8XXeGdO9%2F8JB6iYqeuzR2y3HqMpS22yGM4FZAj5cVAjpKpiAdoozgfyxz7i9RemJ%2Fjynt%2Fr1Y07sqoxw7w%2B7IAotmXWAIP2biWdpTo2T1AmwHvA%3D%3D&amp;email=phamsontay2206@gmail.com'>đây</a> để tiếp tục.</p>
+C:                 <p>Nếu không phải bạn, vui lòng bỏ qua email này.</p>
+C: .
+S: 250 2.0.0 OK  1744891144 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp
+C: QUIT
+S: 221 2.0.0 closing connection 41be03b00d2f7-b0b220fc3b3sm2368993a12.43 - gsmtp

@@ -4,8 +4,8 @@ namespace Webprj.Models.ViewModel
 {
     public class ForgotPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required, EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; }
     }
 }

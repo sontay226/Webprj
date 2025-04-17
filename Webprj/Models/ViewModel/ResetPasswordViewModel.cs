@@ -4,8 +4,7 @@ namespace Webprj.Models.ViewModel
 {
     public class ResetPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required, EmailAddress]
         public string Email { get; set; }
 
         [Required]
