@@ -20,9 +20,7 @@ Trang web được xây dựng theo mô hình **MVC**, sử dụng **HTML/CSS**,
 - **Frontend**: HTML5, CSS3, JavaScript (vanilla)
 - **Backend**: Java (Servlets, JSP theo mô hình MVC)
 - **Database**: SQL Server
-- **IDE**: IntelliJ / Eclipse
-- **Build tool**: Maven (nếu có)
-- **Server**: Tomcat
+- **IDE**: Microsoft Visual Studio
 
 ---
 
