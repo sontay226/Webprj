@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
 
 namespace Webprj.Controllers
@@ -103,6 +104,17 @@ namespace Webprj.Controllers
                 return View("CreateCategory" , category );
             }
             return View("CreateCategory" , category);
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindCategory( string name )
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                var all = await _context.Categories.ToListAsync();
+                return View("CategoryView" , all);
+            }
+            var matched = await _context.Categories.Where(p => EF.Functions.Like(p.CategoryName, $"%{name}%")).ToListAsync();
+            return View("CategoryView" , matched);
         }
     }
 }

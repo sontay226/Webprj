@@ -186,7 +186,6 @@ namespace Webprj.Controllers
             return RedirectToAction("Index" , "Home");
         }
         [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> FindCustomer( string name )
         {
             if (string.IsNullOrEmpty(name))

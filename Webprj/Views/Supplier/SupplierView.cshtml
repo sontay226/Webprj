@@ -14,8 +14,11 @@
 </head>
 <body>
     <p>
-        <a asp-action="CreateSupplier" class="btn btn-secondary">Thêm</a> | 
-        <a asp-action="FindSupplier" class="btn btn-secondary">Tìm Kiếm</a>
+        <a asp-action="CreateSupplier" class="btn btn-secondary">Thêm</a>
+        <form asp-action="FindSupplier" method="get">
+            <input type="text" name="name" placeholder="Tìm theo tên nhà cung cấp..." />
+            <button type="submit">Tìm</button>
+        </form>
     </p>
     <table border="1" class="table">
         <thead>

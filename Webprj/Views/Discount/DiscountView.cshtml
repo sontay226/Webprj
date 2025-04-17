@@ -14,8 +14,11 @@
 </head>
 <body>
 <p>
-    <a asp-action="CreateDiscount">Thêm</a>
-    <a asp-action="Find">Tìm Kiếm</a>
+        <a asp-action="CreateDiscount" class="btn btn-secondary">Thêm</a>
+        <form asp-action="FindDiscount" method="get">
+            <input type="text" name="type" placeholder="Tìm theo loại giảm giá..." />
+            <button type="submit">Tìm</button>
+        </form>
 </p>
 <table border="1" class="table">
     <thead>

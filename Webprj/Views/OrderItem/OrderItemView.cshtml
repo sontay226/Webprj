@@ -15,8 +15,11 @@
 <body>
 <p>
     <a asp-action="CreateOrderItem" class="btn btn-secondary">Thêm</a>
-    <a asp-action="FindOrderItem" class="btn btn-secondary">Tìm Kiếm</a>
-</p>
+        <form asp-action="FindOrderItem" method="get">
+            <input type="text" name="id" placeholder="Tìm theo mã sản phẩm đặt..." />
+            <button type="submit">Tìm</button>
+        </form>
+    </p>
 <table border="1" class="table">
     <thead>
         <tr>

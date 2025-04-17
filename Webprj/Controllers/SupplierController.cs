@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
 
 namespace Webprj.Controllers
@@ -106,6 +107,17 @@ namespace Webprj.Controllers
                 return View("CreateSupplier" , supplier);
             }
             return View("CreateSupplier" , supplier);
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindSupplier( string name )
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                var all = await _context.Suppliers.ToListAsync();
+                return View("SupplierView" , all);
+            }
+            var matched = await _context.Suppliers.Where(p => EF.Functions.Like(p.ShortName, $"%{name}%")).ToListAsync();
+            return View("SupplierView" , matched);
         }
     }
 }

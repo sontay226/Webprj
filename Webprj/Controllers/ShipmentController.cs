@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
 
 namespace Webprj.Controllers
@@ -107,6 +108,22 @@ namespace Webprj.Controllers
                 return View("CreateShipment" , shipment);
             }
             return View("CreateShipment" , shipment);
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindShipment( string id )
+        {
+            if (int.TryParse(id , out int shipmentId))
+            {
+                var matched = await _context.Shipments
+                    .Where(p => p.ShipmentId == shipmentId)
+                    .ToListAsync();
+                return View("ShipmentView" , matched);
+            }
+            else
+            {
+                var all = await _context.Shipments.ToListAsync();
+                return View("ShipmentView" , all);
+            }
         }
     }
 }

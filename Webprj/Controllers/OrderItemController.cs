@@ -301,5 +301,21 @@ namespace Webprj.Controllers
 
             return View(payment);
         }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindOrderItem( string id )
+        {
+            if (int.TryParse(id , out int orderItemId))
+            {
+                var matched = await _context.OrderItems
+                    .Where(p => p.OrderItemId == orderItemId)
+                    .ToListAsync();
+                return View("OrderItemView" , matched);
+            }
+            else
+            {
+                var all = await _context.OrderItems.ToListAsync();
+                return View("OrderItemView" , all);
+            }
+        }
     }
 }

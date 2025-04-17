@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Webprj.Models;
 
 namespace Webprj.Controllers
@@ -106,6 +107,17 @@ namespace Webprj.Controllers
                 return View("CreateDiscount" , discount);
             }
             return View("CreateDiscount" , discount);
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> FindDiscount( string type )
+        {
+            if (string.IsNullOrEmpty(type))
+            {
+                var all = await _context.Discounts.ToListAsync();
+                return View("DiscountView" , all);
+            }
+            var matched = await _context.Discounts.Where(p => EF.Functions.Like(p.DiscountType, $"%{type}%")).ToListAsync();
+            return View("DiscountView" , matched);
         }
     }
 }

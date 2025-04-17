@@ -14,8 +14,11 @@
 </head>
 <body>
 <p>
-    <a asp-action="CreateCategory">Thêm</a>
-    <a asp-action="Find">Tìm Kiếm</a>
+        <a asp-action="CreateCategory" class="btn btn-secondary">Thêm</a>
+        <form asp-action="FindCategory" method="get">
+            <input type="text" name="name" placeholder="Tìm theo tên danh mục..." />
+            <button type="submit">Tìm</button>
+        </form>
 </p>
 <table border="1" class="table">
     <thead>
