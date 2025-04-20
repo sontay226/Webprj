@@ -1,20 +1,22 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using Webprj.Models;
 
 namespace Webprj.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class OrderController : Controller
     {
         private readonly Test2WebContext _context;
         public OrderController( Test2WebContext context ) => _context = context;
+        [Authorize(Roles = "Admin")]
         public IActionResult OrderView()
         {
             var data = _context.Orders.ToList();
             return View(data);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult DetailOrder( int OrderId )
         {
@@ -23,6 +25,7 @@ namespace Webprj.Controllers
             return NotFound();
         }
         // delete controll
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult DeleteOrder( int OrderId )
         {
@@ -30,7 +33,7 @@ namespace Webprj.Controllers
             if (data != null) return View(data);
             return NotFound();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult ConfirmDeleteOrder( int OrderId )
         {
@@ -44,6 +47,7 @@ namespace Webprj.Controllers
             return NotFound();
         }
         // edit controll
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult EditOrder( int OrderId )
         {
@@ -51,6 +55,7 @@ namespace Webprj.Controllers
             if (data != null) return View(data);
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult ConfirmEditOrder( Order order )
         {
@@ -68,12 +73,13 @@ namespace Webprj.Controllers
             }
             return NotFound();
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult CreateOrder()
         {
             return View(new Order());
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult ConfirmCreateOrder( Order order )
@@ -89,7 +95,6 @@ namespace Webprj.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Ghi log lỗi
                     Console.WriteLine(ex.ToString());
                     ModelState.AddModelError("" , "Đã xảy ra lỗi khi lưu dữ liệu.");
                 }
@@ -125,5 +130,21 @@ namespace Webprj.Controllers
                 return View("OrderView" , all);
             }
         }
+        // lịch sử mua hàng 
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> History()
+        {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var orders = await _context.Orders
+                .Where(o => o.CustomerId == userId)        
+                .Include(o => o.OrderItems!)
+                    .ThenInclude(oi => oi.Product)
+                .OrderByDescending(o => o.OrderDate)
+                .ToListAsync();
+
+            return View(orders);
+        }
+
     }
 }

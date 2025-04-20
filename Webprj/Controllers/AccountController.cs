@@ -34,8 +34,8 @@ namespace Webprj.Controllers
             Console.WriteLine($"Thuc thi forget password post method: {emailVerification.Email}");
             Console.WriteLine($"user information: {user.Email}");
 
-            //   if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
-            //     return RedirectToAction(nameof(ForgotPasswordConfirmation));
+            if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            return RedirectToAction(nameof(ForgotPasswordConfirmation));
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             Console.WriteLine($"new token for reset password{token}");
