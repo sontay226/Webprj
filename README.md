@@ -28,4 +28,4 @@ Trang web được xây dựng theo mô hình **MVC**, sử dụng **HTML/CSS**,
 
 1. Clone repo về máy:
    ```bash
-   git clone https://github.com/sontay226/https://github.com/sontay226/Webprj.git
+   git clone https://github.com/sontay226/Webprj.git
