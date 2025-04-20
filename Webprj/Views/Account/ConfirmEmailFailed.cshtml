@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Xác nhận email thất bại";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="logsign-page">
+    <div class="form-container text-center">
+        <h1 class="dangnhaptaikhoan text-danger">Xác nhận email thất bại</h1>
+        <p class="text-danger">Liên kết xác nhận không hợp lệ hoặc đã hết hạn.</p>
+        <p>Vui lòng kiểm tra email hoặc yêu cầu gửi lại liên kết xác nhận.</p>
+        <a href="@Url.Action("Signup", "Customer")" class="btn btn-primary mt-3">Đăng ký lại</a>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary mt-3">Quay về trang chủ</a>
+    </div>
+</body>
+</html>

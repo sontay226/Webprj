@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Webprj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddaaa0e8a340e4ab989bc0a1ba9122c72ff5ffde")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10f13f0b7bba2fbcabdfb21fe3eee99cdc127dc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Webprj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Webprj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

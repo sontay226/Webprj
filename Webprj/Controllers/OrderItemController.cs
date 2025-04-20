@@ -247,7 +247,14 @@ namespace Webprj.Controllers
                 PayMethod = vm.SelectedPayMethod
             };
             _context.Payments.Add(payment);
-
+            var shipment = new Shipment
+            {
+                OrderId = order.OrderId ,
+                PurchaseDate = DateTime.Now ,
+                ShipperName = null ,
+                ShippingDate = null,
+            };
+            _context.Shipments.Add(shipment);
             await _context.SaveChangesAsync();
             return RedirectToAction("OrderConfirmation" , new { paymentId = payment.PaymentId });
         }

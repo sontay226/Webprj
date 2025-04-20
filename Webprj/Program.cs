@@ -25,6 +25,8 @@ namespace Webprj
                 options.Password.RequiredLength = 3;
             })
             .AddEntityFrameworkStores<Test2WebContext>().AddDefaultTokenProviders();
+            builder.Services.Configure<DataProtectionTokenProviderOptions>(opts =>
+            opts.TokenLifespan = TimeSpan.FromMinutes(5));
             builder.Services.AddTransient<IEmailSender , MailKitEmailSender>();
             builder.Services.AddControllersWithViews();
             var app = builder.Build();

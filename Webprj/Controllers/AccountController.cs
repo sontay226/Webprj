@@ -70,23 +70,36 @@ namespace Webprj.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword( ResetPasswordViewModel vm )
         {
-
             if (!ModelState.IsValid) return View(vm);
 
             var user = await _userManager.FindByEmailAsync(vm.Email);
-            Console.WriteLine($"user {user.Email}");
-            Console.WriteLine($"{vm.ConfirmPassword} {vm.ConfirmPassword}");
-            if (user == null) return RedirectToAction(nameof(ResetPasswordConfirmation));
+            Console.WriteLine($"user {user?.Email}");
+            Console.WriteLine($"{vm.Password} {vm.ConfirmPassword}");
 
-            var result = await _userManager.ResetPasswordAsync(user , vm.Token , vm.Password);
-            Console.WriteLine($"result: {result}");
-            if (result.Succeeded)
+            if (user == null)
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
 
+            var result = await _userManager.ResetPasswordAsync(user , vm.Token , vm.Password);
+            Console.WriteLine($"result: {result.Succeeded}");
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+
             foreach (var err in result.Errors)
+            {
+                Console.WriteLine($"Error: {err.Description}");
                 ModelState.AddModelError("" , err.Description);
+            }
+
+            if (result.Errors.Any(e => e.Code.Contains("InvalidToken") || e.Description.Contains("expired")))
+            {
+                return View("~/Views/Account/ConfirmEmailFailed.cshtml");
+            }
             return View(vm);
         }
+
 
         [HttpGet]
         public IActionResult ResetPasswordConfirmation() => View();
