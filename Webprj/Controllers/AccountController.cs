@@ -15,9 +15,7 @@ namespace Webprj.Controllers
         private readonly UserManager<Customer> _userManager;
         private readonly IEmailSender _emailSender;
 
-        public AccountController(
-            UserManager<Customer> userManager ,
-            IEmailSender emailSender )
+        public AccountController(UserManager<Customer> userManager ,IEmailSender emailSender )
         {
             _userManager = userManager;
             _emailSender = emailSender;
@@ -28,7 +26,7 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ForgotPassword([Bind(include:"Email")] ForgotPasswordViewModel emailVerification )
+        public async Task<IActionResult> ForgotPassword( [Bind(include: "Email")] ForgotPasswordViewModel emailVerification )
         {
             Console.WriteLine($"Thuc thi forget password post method: {emailVerification.Email}");
 
@@ -36,8 +34,8 @@ namespace Webprj.Controllers
             Console.WriteLine($"Thuc thi forget password post method: {emailVerification.Email}");
             Console.WriteLine($"user information: {user.Email}");
 
-         //   if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
-           //     return RedirectToAction(nameof(ForgotPasswordConfirmation));
+            //   if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            //     return RedirectToAction(nameof(ForgotPasswordConfirmation));
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             Console.WriteLine($"new token for reset password{token}");
@@ -72,7 +70,7 @@ namespace Webprj.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword( ResetPasswordViewModel vm )
         {
-            
+
             if (!ModelState.IsValid) return View(vm);
 
             var user = await _userManager.FindByEmailAsync(vm.Email);

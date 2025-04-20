@@ -55,7 +55,7 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmEditShipment( Shipment shipment)
+        public IActionResult ConfirmEditShipment( Shipment shipment )
         {
             var data = _context.Shipments.Find(shipment.ShipmentId);
             if (data != null)
@@ -76,7 +76,7 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ConfirmCreateShipment( Shipment shipment)
+        public IActionResult ConfirmCreateShipment( Shipment shipment )
         {
             if (ModelState.IsValid)
             {

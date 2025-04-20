@@ -16,7 +16,7 @@ namespace Webprj.Controllers
             return View(data);
         }
         [HttpGet]
-        public IActionResult DetailPayment( int PaymentId)
+        public IActionResult DetailPayment( int PaymentId )
         {
             var data = _context.Payments.Find(PaymentId);
             if (data != null) return View(data);
@@ -32,7 +32,7 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmDeletePayment( int PaymentId)
+        public IActionResult ConfirmDeletePayment( int PaymentId )
         {
             var data = _context.Payments.Find(PaymentId);
             if (data != null)
@@ -45,7 +45,7 @@ namespace Webprj.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditPayment( int PaymentId)
+        public IActionResult EditPayment( int PaymentId )
         {
             var data = _context.Payments.Find(PaymentId);
             if (data != null)
@@ -54,7 +54,7 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmEditPayment( Payment payment)
+        public IActionResult ConfirmEditPayment( Payment payment )
         {
             var data = _context.Payments.Find(payment.PaymentId);
             if (data != null)

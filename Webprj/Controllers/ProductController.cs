@@ -9,44 +9,44 @@ namespace Webprj.Controllers
     public class ProductController : Controller
     {
         private readonly Test2WebContext _context;
-        public ProductController (Test2WebContext context) => _context = context;
+        public ProductController( Test2WebContext context ) => _context = context;
         [Authorize(Roles = "Admin")]
         public IActionResult ProductView()
         {
             var data = _context.Products.ToList();
-            return View (data);
+            return View(data);
         }
         // adding controll 
         // detail controll 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult DetailProduct(int ProductId )
+        public IActionResult DetailProduct( int ProductId )
         {
-            var data = _context.Products.Find (ProductId);
-            if (data != null) return View (data);
-            return NotFound ();
+            var data = _context.Products.Find(ProductId);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
 
         // delete controll
         [HttpGet]
-        public IActionResult DeleteProduct ( int ProductId )
+        public IActionResult DeleteProduct( int ProductId )
         {
-            var data = _context.Products.Find (ProductId);
-            if (data != null) return View (data);
-            return NotFound ();
+            var data = _context.Products.Find(ProductId);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
 
         [HttpPost]
-        public IActionResult ConfirmDeleteProduct( int ProductId) 
+        public IActionResult ConfirmDeleteProduct( int ProductId )
         {
-            var data = _context.Products.Find (ProductId);
-            if ( data != null )
+            var data = _context.Products.Find(ProductId);
+            if (data != null)
             {
                 _context.Products.Remove(data);
                 _context.SaveChanges();
-                return RedirectToAction ("ProductView");
+                return RedirectToAction("ProductView");
             }
             return NotFound();
         }
@@ -54,19 +54,19 @@ namespace Webprj.Controllers
 
         // edit controll
         [HttpGet]
-        public IActionResult EditProduct ( int ProductId )
+        public IActionResult EditProduct( int ProductId )
         {
-            var data = _context.Products.Find (ProductId);
-            if ( data != null) return View (data);
-            return NotFound ();
+            var data = _context.Products.Find(ProductId);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
 
         [HttpPost]
-        public IActionResult ConfirmEditProduct ( Product product )
+        public IActionResult ConfirmEditProduct( Product product )
         {
-            var data = _context.Products.Find (product.ProductId);
-            if ( data != null )
+            var data = _context.Products.Find(product.ProductId);
+            if (data != null)
             {
                 data.Name = product.Name;
                 data.Description = product.Description;
@@ -80,11 +80,11 @@ namespace Webprj.Controllers
                 data.CategoryId = product.CategoryId;
                 data.SupplierId = product.SupplierId;
 
-                _context.Products.Update (data);
-                _context.SaveChanges ();
-                return RedirectToAction ("ProductView");
+                _context.Products.Update(data);
+                _context.SaveChanges();
+                return RedirectToAction("ProductView");
             }
-            return NotFound (); 
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
 
@@ -142,10 +142,10 @@ namespace Webprj.Controllers
             return View("CreateProduct" , product);
         }
         // thông tin chi tiết của từng sản phẩm 
-        public async Task<IActionResult> ProductInformation ( int id )
+        public async Task<IActionResult> ProductInformation( int id )
         {
             var product = await _context.Products.FindAsync(id);
-            if ( product == null)
+            if (product == null)
             {
                 return NotFound();
             }

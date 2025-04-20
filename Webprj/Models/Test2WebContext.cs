@@ -20,7 +20,6 @@ namespace Webprj.Models
         }
 
         public virtual DbSet<Category> Categories { get; set; } = null!;
-        public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Discount> Discounts { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderItem> OrderItems { get; set; } = null!;
@@ -38,30 +37,6 @@ namespace Webprj.Models
                 entity.Property(e => e.Description).HasColumnType("text");
             });
 
-            modelBuilder.Entity<Customer>(entity =>
-            {
-                entity.HasIndex(e => e.Email , "UQ__Customer__A9D1053485F331D6").IsUnique();
-
-                entity.Property(e => e.Id).HasColumnName("Id");
-
-                entity.Property(e => e.BillingAddress).HasMaxLength(255);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.CustomerName).HasMaxLength(255);
-
-                entity.Property(e => e.Email).HasMaxLength(255);
-
-                entity.Property(e => e.PasswordHash).HasMaxLength(255);
-
-                entity.Property(e => e.PhoneNumber)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ShippingAddress).HasMaxLength(255);
-            });
 
             modelBuilder.Entity<Discount>(entity =>
             {

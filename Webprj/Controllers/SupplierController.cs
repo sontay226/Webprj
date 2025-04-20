@@ -54,7 +54,7 @@ namespace Webprj.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmEditSupplier( Supplier supplier)
+        public IActionResult ConfirmEditSupplier( Supplier supplier )
         {
             var data = _context.Suppliers.Find(supplier.SupplierId);
             if (data != null)
@@ -77,7 +77,7 @@ namespace Webprj.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ConfirmCreateSupplier( Supplier supplier)
+        public IActionResult ConfirmCreateSupplier( Supplier supplier )
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +116,7 @@ namespace Webprj.Controllers
                 var all = await _context.Suppliers.ToListAsync();
                 return View("SupplierView" , all);
             }
-            var matched = await _context.Suppliers.Where(p => EF.Functions.Like(p.ShortName, $"%{name}%")).ToListAsync();
+            var matched = await _context.Suppliers.Where(p => EF.Functions.Like(p.ShortName , $"%{name}%")).ToListAsync();
             return View("SupplierView" , matched);
         }
     }

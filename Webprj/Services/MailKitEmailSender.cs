@@ -26,7 +26,7 @@ namespace Webprj.Services
             message.Subject = subject;
             message.Body = new TextPart("html") { Text = htmlMessage };
 
-           // Console.WriteLine("thong tin tin nhan {}, {}, {}" , message.Subject , message.Body); ;
+            // Console.WriteLine("thong tin tin nhan {}, {}, {}" , message.Subject , message.Body); ;
             try
             {
                 using var smtp = new SmtpClient(new ProtocolLogger("smtp-log.txt"));
@@ -47,7 +47,7 @@ namespace Webprj.Services
             catch (Exception ex)
             {
                 Console.WriteLine("=== MAILKIT EXCEPTION ===");
-                Console.WriteLine(ex.ToString());      
+                Console.WriteLine(ex.ToString());
                 throw;
             }
         }

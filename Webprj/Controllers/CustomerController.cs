@@ -14,65 +14,65 @@ namespace Webprj.Controllers
         private readonly Test2WebContext _context;
         private readonly UserManager<Customer> _userManager;
         private readonly SignInManager<Customer> _signInManager;
-        public CustomerController( Test2WebContext context , UserManager<Customer> um , SignInManager<Customer> sm)
+        public CustomerController( Test2WebContext context , UserManager<Customer> um , SignInManager<Customer> sm )
         {
             _userManager = um;
             _signInManager = sm;
             _context = context;
         }
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CustomerView ()
+        public async Task<IActionResult> CustomerView()
         {
-            var data = await _context.Customers.ToListAsync ();
-            return View ( data );
+            var data = await _context.Users.ToListAsync();
+            return View(data);
         }
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> DetailCustomer ( int id)
+        public async Task<IActionResult> DetailCustomer( int id )
         {
-            var data = await _context.Customers.FindAsync (id);
-            if (data != null) return  View (data);
-            return NotFound ();
+            var data = await _context.Users.FindAsync(id);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> DeleteCustomer ( int id )
+        public async Task<IActionResult> DeleteCustomer( int id )
         {
-            var data = await _context.Customers.FindAsync (id);
-            if (data != null) return View (data);
-            return NotFound ();
+            var data = await _context.Users.FindAsync(id);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> ConfirmDeleteCustomer ( int id)
+        public async Task<IActionResult> ConfirmDeleteCustomer( int id )
         {
-            var data = await _context.Customers.FindAsync (id);
+            var data = await _context.Users.FindAsync(id);
             if (data != null)
             {
-                _context.Customers.Remove (data);
-                await _context.SaveChangesAsync ();
-                return RedirectToAction ("CustomerView");
+                _context.Users.Remove(data);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("CustomerView");
             }
-            return NotFound ();
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> EditCustomer ( int id)
+        public async Task<IActionResult> EditCustomer( int id )
         {
-            var data = await _context.Customers.FindAsync (id);
-            if (data != null) return View (data);
-            return NotFound ();
+            var data = await _context.Users.FindAsync(id);
+            if (data != null) return View(data);
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ConfirmEditCustomer( Customer customer)
+        public async Task<IActionResult> ConfirmEditCustomer( Customer customer )
         {
-            if ( !ModelState.IsValid )
+            if (!ModelState.IsValid)
             {
                 return View("EditCustomer" , customer);
             }
-            var data = _context.Customers.Find (customer.Id);
+            var data = _context.Users.Find(customer.Id);
             if (data != null)
             {
                 data.CustomerName = customer.CustomerName;
@@ -82,11 +82,11 @@ namespace Webprj.Controllers
                 data.BillingAddress = customer.BillingAddress;
                 data.PasswordHash = customer.PasswordHash;
                 data.CreatedAt = customer.CreatedAt;
-                _context.Customers.Update (data);
-                await _context.SaveChangesAsync ();
-                return RedirectToAction ("CustomerView");
+                _context.Users.Update(data);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("CustomerView");
             }
-            return NotFound ();
+            return NotFound();
         }
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -97,14 +97,14 @@ namespace Webprj.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ConfirmCreateCustomer( Customer customer)
+        public async Task<IActionResult> ConfirmCreateCustomer( Customer customer )
         {
             if (ModelState.IsValid)
             {
                 try
                 {
                     customer.CreatedAt = DateTime.Now;
-                    _context.Customers.Add(customer);
+                    _context.Users.Add(customer);
                     await _context.SaveChangesAsync();
                     return RedirectToAction("CustomerView");
                 }
@@ -133,14 +133,14 @@ namespace Webprj.Controllers
         [HttpGet]
         public IActionResult Signin()
         {
-            return View( new SigninViewModel());
+            return View(new SigninViewModel());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Signin( SigninViewModel model )
         {
 
-            if ( !ModelState.IsValid ) return View( model );
+            if (!ModelState.IsValid) return View(model);
             var result = await _signInManager.PasswordSignInAsync(
                 model.Email ,
                 model.Password ,
@@ -163,7 +163,7 @@ namespace Webprj.Controllers
         public IActionResult Signup() => View(new SignupViewModel());
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Signup(SignupViewModel model )
+        public async Task<IActionResult> Signup( SignupViewModel model )
         {
             if (!ModelState.IsValid) { return View(model); }
             var user = new Customer
@@ -174,14 +174,13 @@ namespace Webprj.Controllers
                 PhoneNumber = model.PhoneNumber ,
                 ShippingAddress = model.ShippingAddress ,
                 BillingAddress = model.BillingAddress ,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.UtcNow ,
                 EmailConfirmed = true
             };
-            var result = await _userManager.CreateAsync( user, model.Password);
+            var result = await _userManager.CreateAsync(user , model.Password);
             if (!result.Succeeded)
             {
-                foreach (var e in result.Errors)
-                    ModelState.AddModelError("" , e.Description);
+                foreach (var e in result.Errors) ModelState.AddModelError("" , e.Description);
                 return View(model);
             }
             await _userManager.AddToRoleAsync(user , "User");
@@ -200,12 +199,11 @@ namespace Webprj.Controllers
         {
             if (string.IsNullOrEmpty(name))
             {
-                var all = await _context.Customers.ToListAsync();
+                var all = await _context.Users.ToListAsync();
                 return View("CustomerView" , all);
             }
-            var matched = await _context.Customers.Where(p => EF.Functions.Like(p.CustomerName, $"%{name}%")).ToListAsync();
+            var matched = await _context.Users.Where(p => EF.Functions.Like(p.CustomerName , $"%{name}%")).ToListAsync();
             return View("CustomerView" , matched);
         }
     }
 }
-    

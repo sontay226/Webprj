@@ -102,6 +102,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Customer/SignupConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU2lnbnVwQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Study/LearnCsharp/Webprj/Webprj/Webprj/Views/Discount/CreateDiscount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY291bnRcQ3JlYXRlRGlzY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

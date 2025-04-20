@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Webprj.Models;
 using Webprj.Models.ViewModel;
-
+using Webprj.Models.ViewModels;
 namespace Webprj.Controllers
 {
 
@@ -144,19 +144,19 @@ namespace Webprj.Controllers
                         ImageUrl = oi.Product.ImageUrl ,
                         Quantity = oi.ProductNumber ,
                         UnitPrice = oi.Product.Price ,
-                        TotalCost = (decimal)oi.TotalCost
+                        TotalCost = (decimal) oi.TotalCost
                     })
                     .ToList()
             };
             return View(vm);
         }
 
-        private async Task<Order?> GetOrCreateCartAsync ()
+        private async Task<Order?> GetOrCreateCartAsync()
         {
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var cart = await _context.Orders.Include(o => o.OrderItems!).ThenInclude(oi => oi.Product)
-                .FirstOrDefaultAsync( o => o.CustomerId == userId && o.Status == "Pending");
-            if ( cart == null)
+                .FirstOrDefaultAsync(o => o.CustomerId== userId && o.Status == "Pending");
+            if (cart == null)
             {
                 cart = new Order
                 {
@@ -284,7 +284,7 @@ namespace Webprj.Controllers
             return View(vm);
         }
 
-        private IEnumerable<SelectListItem> GetPayMethods() => new List<SelectListItem> { 
+        private IEnumerable<SelectListItem> GetPayMethods() => new List<SelectListItem> {
             new SelectListItem("Thanh Toán Khi Nhận Hàng(COD)" , "cash"),
             new SelectListItem("Chuyển khoản ngân hàng (Bank)" , "bank_transfer"),
             new SelectListItem("Ví Momo" , "momo"),
