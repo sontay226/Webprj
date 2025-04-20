@@ -23,6 +23,7 @@ namespace Webprj
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 3;
+                options.SignIn.RequireConfirmedEmail = true;
             })
             .AddEntityFrameworkStores<Test2WebContext>().AddDefaultTokenProviders();
             builder.Services.Configure<DataProtectionTokenProviderOptions>(opts =>

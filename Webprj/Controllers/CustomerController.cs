@@ -4,8 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Net;
 using Webprj.Models;
 using Webprj.Models.ViewModel;
+using Webprj.Models.ViewModels;
+using Webprj.Services;
 
 namespace Webprj.Controllers
 {
@@ -14,11 +17,14 @@ namespace Webprj.Controllers
         private readonly Test2WebContext _context;
         private readonly UserManager<Customer> _userManager;
         private readonly SignInManager<Customer> _signInManager;
-        public CustomerController( Test2WebContext context , UserManager<Customer> um , SignInManager<Customer> sm )
+        private readonly IEmailSender _emailSender;
+
+        public CustomerController( Test2WebContext context , UserManager<Customer> um , SignInManager<Customer> sm , IEmailSender emailSender )
         {
             _userManager = um;
             _signInManager = sm;
             _context = context;
+            _emailSender = emailSender;
         }
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CustomerView()
@@ -139,7 +145,17 @@ namespace Webprj.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Signin( SigninViewModel model )
         {
-
+            var user = await _userManager.FindByEmailAsync( model.Email );
+            if ( user == null)
+            {
+                ModelState.AddModelError(string.Empty , "Sai email hoặc mật khẩu");
+                return View(model);
+            }
+            if ( !user.EmailConfirmed )
+            {
+                ModelState.AddModelError(string.Empty , "Vui lòng xác nhận email trước khi đăng nhập!");
+                return View(model);
+            }
             if (!ModelState.IsValid) return View(model);
             var result = await _signInManager.PasswordSignInAsync(
                 model.Email ,
@@ -175,7 +191,7 @@ namespace Webprj.Controllers
                 ShippingAddress = model.ShippingAddress ,
                 BillingAddress = model.BillingAddress ,
                 CreatedAt = DateTime.UtcNow ,
-                EmailConfirmed = true
+                EmailConfirmed = false
             };
             var result = await _userManager.CreateAsync(user , model.Password);
             if (!result.Succeeded)
@@ -183,9 +199,20 @@ namespace Webprj.Controllers
                 foreach (var e in result.Errors) ModelState.AddModelError("" , e.Description);
                 return View(model);
             }
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var callbackUrl = Url.Action(nameof(ConfirmEmail) , "Customer" ,
+                new { email = user.Email , token = WebUtility.UrlEncode(token) } ,
+                protocol: Request.Scheme);
+
+            var htmlMessage = $@"
+            <p>Chào {user.CustomerName},</p>
+            <p>Vui lòng xác nhận tài khoản bằng cách nhấn vào liên kết sau:</p>
+            <a href=""{callbackUrl}"">Xác nhận Email</a>";
+
+            await _emailSender.SendEmailAsync(user.Email , "Xác nhận Email" , htmlMessage);
+
             await _userManager.AddToRoleAsync(user , "User");
-            await _signInManager.SignInAsync(user , isPersistent: false);
-            return RedirectToAction("Index" , "Home");
+            return View("SignupConfirmation" , new SignupConfirmationViewModel { Email = user.Email });
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -204,6 +231,24 @@ namespace Webprj.Controllers
             }
             var matched = await _context.Users.Where(p => EF.Functions.Like(p.CustomerName , $"%{name}%")).ToListAsync();
             return View("CustomerView" , matched);
+        }
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail ( string email , string token )
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrWhiteSpace(token)) return View("Error");
+            var user = await _userManager.FindByEmailAsync(email);
+            if ( user == null) return View("Error");
+            var decodedToken = WebUtility.UrlDecode(token);
+            var result = await _userManager.ConfirmEmailAsync(user , decodedToken);
+
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user , isPersistent: false);
+                return View("~/Views/Account/ConfirmEmail.cshtml");
+            }
+
+            return View("~/Views/Account/ConfirmEmailFailed.cshtml");
         }
     }
 }

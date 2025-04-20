@@ -1,4 +1,21 @@
 ﻿@model Webprj.Models.ViewModels.SignupConfirmationViewModel
-
-<h2>Đăng ký thành công!</h2>
-<p>Chúng tôi đã gửi email xác nhận tới <strong>@Model.Email</strong>. Vui lòng kiểm tra hộp thư của bạn.</p>
+@{
+    Layout = null;
+    ViewData["Title"] = "Đăng Ký Thành Công";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="logsign-page">
+    <div class="form-container text-center">
+        <h1 class="dangnhaptaikhoan">Đăng Ký Thành Công</h1>
+        <p>Đã gửi email xác nhận tới <strong>@Model.Email</strong>.</p>
+        <p>Vui lòng kiểm tra hộp thư và nhấp vào liên kết để kích hoạt tài khoản.</p>
+    </div>
+</body>
+</html>
